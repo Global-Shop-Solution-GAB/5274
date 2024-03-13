@@ -1,0 +1,829 @@
+Program.Sub.ScreenSU.Start
+Gui.F_GCG_5274_BinMaint..Create
+Gui.F_GCG_5274_BinMaint..Size(16725,10695)
+Gui.F_GCG_5274_BinMaint..MinX(0)
+Gui.F_GCG_5274_BinMaint..MinY(0)
+Gui.F_GCG_5274_BinMaint..Position(0,0)
+Gui.F_GCG_5274_BinMaint..BackColor(-2147483633)
+Gui.F_GCG_5274_BinMaint..MousePointer(0)
+Gui.F_GCG_5274_BinMaint..Event(UnLoad,F_GCG_5274_BinMaint_UnLoad)
+Gui.F_GCG_5274_BinMaint..Caption("Well Capacity Maintenance")
+Gui.F_GCG_5274_BinMaint..Sizeable(False)
+Gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.Create(GsGridControl)
+Gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.Size(16440,8775)
+Gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.Position(0,1245)
+Gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.Anchor(15)
+Gui.F_GCG_5274_BinMaint.frmWellAdm.Create(Frame)
+Gui.F_GCG_5274_BinMaint.frmWellAdm.Size(4320,1005)
+Gui.F_GCG_5274_BinMaint.frmWellAdm.Position(60,75)
+Gui.F_GCG_5274_BinMaint.frmWellAdm.Caption("Well Tray Administration")
+Gui.F_GCG_5274_BinMaint.frmWellAdm.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.txtWellTray.Create(TextBox,"",True,1215,300,0,120,615,True,0,"Arial",8,-2147483643,1)
+Gui.F_GCG_5274_BinMaint.txtWellTray.Parent("frmWellAdm")
+Gui.F_GCG_5274_BinMaint.txtWellTray.MaxLength(2)
+Gui.F_GCG_5274_BinMaint.lblWellTray.Create(Label,"Well Tray ID",True,1155,255,0,120,330,True,0,"Arial",8,-2147483633,0)
+Gui.F_GCG_5274_BinMaint.lblWellTray.Parent("frmWellAdm")
+Gui.F_GCG_5274_BinMaint.lblWellTray.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.lblSize.Create(Label,"Size",True,705,255,0,1635,330,True,0,"Arial",8,-2147483633,0)
+Gui.F_GCG_5274_BinMaint.lblSize.Parent("frmWellAdm")
+Gui.F_GCG_5274_BinMaint.lblSize.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Create(Button)
+Gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Size(855,375)
+Gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Position(3390,555)
+Gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Parent("frmWellAdm")
+Gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Caption("Update")
+Gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Event(Click,cmdUpdateWellSize_Click)
+Gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.ddlSize.Create(DropDownList)
+Gui.F_GCG_5274_BinMaint.ddlSize.Size(1095,330)
+Gui.F_GCG_5274_BinMaint.ddlSize.Position(1440,600)
+Gui.F_GCG_5274_BinMaint.ddlSize.Parent("frmWellAdm")
+Gui.F_GCG_5274_BinMaint.cboAdmLoc.Create(ComboBox)
+Gui.F_GCG_5274_BinMaint.cboAdmLoc.Size(705,330)
+Gui.F_GCG_5274_BinMaint.cboAdmLoc.Position(2610,600)
+Gui.F_GCG_5274_BinMaint.cboAdmLoc.Parent("frmWellAdm")
+Gui.F_GCG_5274_BinMaint.lblLoc.Create(Label,"LOC",True,495,255,0,2700,330,True,0,"Arial",8,-2147483633,0)
+Gui.F_GCG_5274_BinMaint.lblLoc.Parent("frmWellAdm")
+Gui.F_GCG_5274_BinMaint.frmBinTransfer.Create(Frame)
+Gui.F_GCG_5274_BinMaint.frmBinTransfer.Size(5235,960)
+Gui.F_GCG_5274_BinMaint.frmBinTransfer.Position(11100,150)
+Gui.F_GCG_5274_BinMaint.frmBinTransfer.Caption("Bin Transfer")
+Gui.F_GCG_5274_BinMaint.frmBinTransfer.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.frmBinTransfer.Anchor(9)
+Gui.F_GCG_5274_BinMaint.txtToWTS.Create(TextBox,"",True,1215,300,0,2205,585,True,0,"Arial",8,-2147483643,1)
+Gui.F_GCG_5274_BinMaint.txtToWTS.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.txtToWTS.MaxLength(4)
+Gui.F_GCG_5274_BinMaint.lblToWTS.Create(Label,"To WTS",True,870,255,0,2355,315,True,0,"Arial",8,-2147483633,0)
+Gui.F_GCG_5274_BinMaint.lblToWTS.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.lblToWTS.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.txtFromWTS.Create(TextBox,"",True,1215,300,0,90,585,True,1,"Arial",8,-2147483643,1)
+Gui.F_GCG_5274_BinMaint.txtFromWTS.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.txtFromWTS.MaxLength(4)
+Gui.F_GCG_5274_BinMaint.lblNumSots.Create(Label,"Slots",True,585,255,0,1455,315,True,0,"Arial",8,-2147483633,0)
+Gui.F_GCG_5274_BinMaint.lblNumSots.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.lblNumSots.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.cmdMoveParts.Create(Button)
+Gui.F_GCG_5274_BinMaint.cmdMoveParts.Size(855,375)
+Gui.F_GCG_5274_BinMaint.cmdMoveParts.Position(4305,525)
+Gui.F_GCG_5274_BinMaint.cmdMoveParts.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.cmdMoveParts.Caption("Move")
+Gui.F_GCG_5274_BinMaint.cmdMoveParts.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.cmdMoveParts.Event(Click,cmdMoveParts_Click)
+Gui.F_GCG_5274_BinMaint.txtSlotNum.Create(TextBox,"",True,660,300,0,1440,585,True,2,"Arial",8,-2147483643,1)
+Gui.F_GCG_5274_BinMaint.txtSlotNum.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.txtSlotNum.MaxLength(2)
+Gui.F_GCG_5274_BinMaint.txtSlotNum.NumericOnly(1)
+Gui.F_GCG_5274_BinMaint.lblFromWTS.Create(Label,"From WTS",True,1095,255,0,90,315,True,0,"Arial",8,-2147483633,0)
+Gui.F_GCG_5274_BinMaint.lblFromWTS.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.lblFromWTS.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.cboBin2BinLoc.Create(ComboBox)
+Gui.F_GCG_5274_BinMaint.cboBin2BinLoc.Size(705,330)
+Gui.F_GCG_5274_BinMaint.cboBin2BinLoc.Position(3495,570)
+Gui.F_GCG_5274_BinMaint.cboBin2BinLoc.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.lbl1.Create(Label,"LOC",True,465,255,0,3600,315,True,0,"Arial",8,-2147483633,0)
+Gui.F_GCG_5274_BinMaint.lbl1.Parent("frmBinTransfer")
+Gui.F_GCG_5274_BinMaint.lbl1.FontStyle(True,False,False,False,False)
+Gui.F_GCG_5274_BinMaint.pic1.Create(PictureBox)
+Gui.F_GCG_5274_BinMaint.pic1.Size(4740,990)
+Gui.F_GCG_5274_BinMaint.pic1.Position(5595,150)
+Gui.F_GCG_5274_BinMaint.pic1.Anchor(1)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.iToWTSID.Declare
+v.Global.iFromWTSID.Declare
+v.Global.iSlotNum.Declare
+v.Global.bSameSize.Declare
+Program.Sub.Preflight.End
+
+'Author: Alejandro Anazco Villarreal
+'Customer: Troxler
+'Program Name: GCG_5274_Bin_Maintenance.g2u
+'Date Started: 2/18/2019 (Comments Added)
+'Description: 
+'Keeps the custom structure of well-tray-slots of Troxler
+'Keeps track of used/innactive slots.
+'Allows user to change size of trays.
+'Allows user to move parts from bin to bin.
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(srLoadLogo)
+	f.Intrinsic.Control.CallSub(reconcileData)	
+	f.Intrinsic.Control.CallSub(LoadData)
+	gui.F_GCG_5274_BinMaint..Show
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	F.Intrinsic.Control.CallSub(F_GCG_5274_BinMaint_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5274_BinMaintenance.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.srLoadLogo.Start
+f.Intrinsic.Control.Try
+	'Load the Logo at the top of dash and the Icon
+	v.Local.sIcon.Declare(String)
+	v.Local.sGssLogo.Declare(String)
+	
+	f.Intrinsic.String.Build("{0}\ART\gss2.ico", v.Caller.GlobalDir, v.Local.sIcon)
+	f.Intrinsic.String.Build("{0}\ART\GAB_GSS_Logo_Green_Dash.png", v.Caller.GlobalDir, v.Local.sGssLogo)
+	gui.F_GCG_5274_BinMaint.pic1.Picture(v.Local.sGssLogo)
+	gui.F_GCG_5274_BinMaint..Icon(v.Local.sIcon)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.srLoadLogo.End
+
+Program.Sub.traySizes.Start
+v.Local.iCnt.Declare
+f.Intrinsic.Control.Try
+	gui.F_GCG_5274_BinMaint.ddlSize.AddItem(1,0)
+	gui.F_GCG_5274_BinMaint.ddlSize.AddItem(5,1)
+	gui.F_GCG_5274_BinMaint.ddlSize.AddItem(10,2)
+	gui.F_GCG_5274_BinMaint.ddlSize.AddItem(15,3)
+	gui.F_GCG_5274_BinMaint.ddlSize.AddItem(20,4)
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("locationDT", "con", "Select * from V_Locations order by Location asc")
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.locationDT.RowCount--, 1)
+		gui.F_GCG_5274_BinMaint.cboAdmLoc.AddItem(v.DataTable.locationDT(v.Local.iCnt).Location!FieldValTrim)
+		gui.F_GCG_5274_BinMaint.cboBin2BinLoc.AddItem(v.DataTable.locationDT(v.Local.iCnt).Location!FieldValTrim)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.Data.DataTable.Close("locationDT")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.traySizes.End
+
+Program.Sub.gridViewProperties.Start
+'LOCATION
+'HeaderFontBold
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","ACTIVE","HeaderFontBold",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAY","HeaderFontBold",True)
+
+'Visible
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","Visible",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","ACTIVE","Visible",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAY","Visible",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WTSnumID","Visible",False)
+
+'ReadOnly
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","ACTIVE","ReadOnly",True)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAY","ReadOnly",True)
+
+'AllowEdit
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","ACTIVE","AllowEdit",False)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAY","AllowEdit",False)
+
+'HeaderHAlignment
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","HeaderHAlignment",Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","HeaderHAlignment",Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","HeaderHAlignment",Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","ACTIVE","HeaderHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAY","HeaderHAlignment", Center)
+
+'CellHAlignment
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","CellHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","CellHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","CellHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","CellHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","CellHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","CellHAlignment", Left)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","CellHAlignment",Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","CellHAlignment",Left)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","CellHAlignment",Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","CellHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","ACTIVE","CellHAlignment", Center)
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAY","CellHAlignment", Center)
+
+'Caption
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","Caption","WELLTRAYSLOTID")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","Caption","TRAYSIZE")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","Caption","WELL")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","Caption","TRAY")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","Caption","SLOT")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","Caption","PART")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","Caption","LOCATION")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","Caption","SERIAL")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","Caption","SOURCE CODE")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","Caption","USED")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","ACTIVE","Caption","ACTIVE")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAY","Caption","WELLTRAY")
+
+'CustomDisplay
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","DisplayCustomNumeric","##")
+
+'MinWidth
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","MinWidth","110")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","MinWidth","80")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","MinWidth","40")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","MinWidth","40")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","MinWidth","40")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","MinWidth","160")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","MinWidth","80")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","MinWidth","210")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","MinWidth","210")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","MinWidth","40")
+
+'Width
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","Width","110")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","Width","80")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","Width","40")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","Width","40")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","Width","40")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","Width","160")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","Width","80")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","Width","210")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","Width","210")
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","Width","40")
+
+'Maxwidth
+
+'VisibleIndex
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELLTRAYSLOTID","VisibleIndex","0")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAYSIZE","VisibleIndex","1")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","WELL","VisibleIndex","2")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","TRAY","VisibleIndex","3")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SLOT","VisibleIndex","4")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","PART","VisibleIndex","6")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","LOCATION","VisibleIndex","7")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","SERIAL","VisibleIndex","8")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","HEAT","VisibleIndex","9")
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SetColumnProperty("wellsGV","USED","VisibleIndex","5")
+
+'gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.BestFitColumns("wellsGV")
+
+Program.Sub.gridViewProperties.End
+
+Program.Sub.cmdUpdateWellSize_Click.Start
+v.Local.sWellTray.Declare
+v.Local.sWellID.Declare
+v.Local.sTrayID.Declare
+v.Local.sFilter.Declare
+
+f.Intrinsic.Control.Try
+	gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Enabled(False)
+	'Getting WT string from textbox, it must be 2 letters matching a WT from the table; Always capitalize the entry
+	v.Local.sWellTray.Set(v.Screen.F_GCG_5274_BinMaint!txtWellTray.Text)
+	f.Intrinsic.String.UCase(v.Local.sWellTray, v.Local.sWellTray)
+	'check if the string is not empty, is not less than 2 characteres long and if the size is different than empty.
+	f.Intrinsic.Control.If(v.Local.sWellTray, =, "")
+		f.Intrinsic.UI.Msgbox("Type a valid Well-Tray ID")
+		gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Enabled(True)
+	f.Intrinsic.Control.ElseIf(v.Local.sWellTray.Length, <, 2)
+		f.Intrinsic.UI.Msgbox("Type a valid Well-Tray ID")
+		gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Enabled(True)
+	f.Intrinsic.Control.ElseIf(v.Local.sWellTray.Length, =, 2)
+		f.Intrinsic.Control.If(v.Screen.F_GCG_5274_BinMaint!ddlSize.Value, <>, "")
+			'Create a datatble holding only the WellTray Column
+			f.Data.DataView.Create("wellsDT", "wellsDistinctDV", 22)
+			f.Data.DataView.ToDataTableDistinct("wellsDT", "wellsDistinctDV", "wellTrayDT", "WellTray")
+			'Create a dataview holding only the WT string, if it does not match it asks to enter a valit one.
+			f.Intrinsic.String.Build("WellTray = '{0}'", v.Local.sWellTray, v.Local.sFilter)
+			f.Data.DataView.Create("wellTrayDT", "wellTrayDV", 22, v.Local.sFilter, "WellTray ASC")
+			f.Intrinsic.Control.If(v.DataView.wellTrayDT!wellTrayDV.RowCount, =, 1)
+				'if all the entry checks pass, it calls for in-use check.
+				f.Intrinsic.Control.CallSub(checkInUse, sWellTray, v.Local.sWellTray)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.UI.Msgbox("Please type a valid Well-Tray ID")
+				gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Enabled(True)
+			f.Intrinsic.Control.EndIf
+			f.Data.DataView.Close("wellsDT", "wellsDistinctDV")
+			gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Enabled(True)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.UI.Msgbox("Please select a valid Tray Size")
+			gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Enabled(True)
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.EndIf
+	gui.F_GCG_5274_BinMaint.cmdUpdateWellSize.Enabled(True)
+	gui.F_GCG_5274_BinMaint.txtWellTray.Text("")
+	gui.F_GCG_5274_BinMaint.ddlSize.ListIndex(-1)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdUpdateWellSize_Click.End
+
+Program.Sub.checkInUse.Start
+v.Local.sFilter.Declare
+v.Local.iCnt.Declare
+v.Local.bInUse.Declare
+f.Intrinsic.Control.Try
+	'creates a dataview with all the slots in the passed well-tray combination
+	f.Intrinsic.String.Build("WellTray = '{0}' and Location = '{1}'", v.Args.sWellTray, v.Screen.F_GCG_5274_BinMaint!cboAdmLoc.Value, v.Local.sFilter)
+	f.Data.DataView.Create("wellsDT", "inUseDV", 22, v.Local.sFilter, "Slot ASC")
+	
+	'loop through the datatable until it ends the dt or finds a slot in-use
+	f.Intrinsic.Control.DoUntil(v.Local.bInUse)
+		'if any slot is in use, it will change the boolean to true, ending the loop. The loop also ends if the control variable reachs the end of the datatable.
+		v.Local.bInUse.Set(v.DataView.wellsDT!inUseDV(v.Local.iCnt).Used!FieldVal)
+		f.Intrinsic.Math.Add(v.Local.iCnt, 1, v.Local.iCnt)
+		f.Intrinsic.Control.If(v.Local.iCnt, =, v.DataView.wellsDT!inUseDV.RowCount)
+			f.Intrinsic.Control.ExitDo
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Loop
+	
+	'if the boolean control variable is still false, proceed to change the size of the tray.
+	f.Intrinsic.Control.If(v.Local.bInUse, =, false)
+		f.Intrinsic.Control.CallSub(changeTraySize)
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("wellsDT", "inUseDV")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.checkInUse.End
+
+Program.Sub.changeTraySize.Start
+v.Local.iCnt.Declare
+v.Local.iLimit.Declare
+v.Local.iTraySize.Declare
+v.local.sSQL.Declare
+
+f.Intrinsic.Control.Try
+	'Gets the new tray size from dropdown.
+	v.Local.iTraySize.Set(v.Screen.F_GCG_5274_BinMaint!ddlSize.Value)
+	'Gets the limit for active slots, by substracting one from the new size
+	f.Intrinsic.Math.Sub(v.Local.iTraySize, 1, v.Local.iLimit)
+	
+	'loop through all 20 slots in a Well-Tray combinantion, set as active all equal or less than the limit, all greater than the limit are set as false.
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, 19, 1)
+		f.Data.DataView.SetValue("wellsDT", "inUseDV", v.Local.iCnt, "TRAYSIZE", v.Local.iTraySize)
+		f.Intrinsic.Control.If(v.Local.iCnt, <=, v.Local.iLimit)
+			f.Data.DataView.SetValue("wellsDT", "inUseDV", v.Local.iCnt, "ACTIVE", "True")
+			f.ODBC.Connection!con.OpenCompanyConnection
+				f.Intrinsic.String.Build("Update GCG_5274_BinMaint Set Active = 1, TraySize = '{0}' Where WTSnumID = '{1}'", v.Local.iTraySize, v.DataView.wellsDT!inUseDV(v.Local.iCnt).WTSnumID!FieldVal, v.Local.sSQL)
+				f.ODBC.Connection!con.Execute(V.Local.sSQL)
+				'f.Data.DataTable.CreateFromSQL("dtName", "con", v.Local.sSQL, true)
+			f.ODBC.Connection!con.Close
+		f.Intrinsic.Control.Else
+			f.Data.DataView.SetValue("wellsDT", "inUseDV", v.Local.iCnt, "ACTIVE", "False")
+			f.ODBC.Connection!con.OpenCompanyConnection
+				f.Intrinsic.String.Build("Update GCG_5274_BinMaint Set Active = 0, TraySize = '{0}' Where WTSnumID = '{1}'", v.Local.iTraySize, v.DataView.wellsDT!inUseDV(v.Local.iCnt).WTSnumID!FieldVal, v.Local.sSQL)
+				f.ODBC.Connection!con.Execute(V.Local.sSQL)
+				'f.Data.DataTable.CreateFromSQL("dtName", "con", v.Local.sSQL, true)
+			f.ODBC.Connection!con.Close
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.changeTraySize.End
+
+Program.Sub.cmdMoveParts_Click.Start
+v.Local.sFromWTS.Declare
+v.Local.sToWTS.Declare
+v.Local.iSlotSize.Declare
+v.Local.sFilter.Declare
+v.Local.iFromTraySize.Declare
+v.Local.iToTraySize.Declare
+
+f.Intrinsic.Control.Try
+	v.Global.iToWTSID.Set(0)
+	v.Global.iFromWTSID.Set(0)
+	gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(False)
+	
+	'set screen input into local variables. (Capitalized)
+	f.Intrinsic.String.UCase(v.Screen.F_GCG_5274_BinMaint!txtFromWTS.Text!FieldValTrim, v.Local.sFromWTS)
+	f.Intrinsic.String.UCase(v.Screen.F_GCG_5274_BinMaint!txtToWTS.Text!FieldValTrim, v.Local.sToWTS)
+	v.Local.iSlotSize.Set(v.Screen.F_GCG_5274_BinMaint!txtSlotNum.Text!FieldVal)
+	
+	'check if the texbox are empty
+	f.Intrinsic.Control.If(v.Local.sFromWTS, =, "")
+		f.Intrinsic.UI.Msgbox("Please enter a valid Origin WTS")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sFromWTS.Length, <, 4)
+		f.Intrinsic.UI.Msgbox("Please enter a valid Origin WTS")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.iSlotSize, =, "")
+		f.Intrinsic.UI.Msgbox("Please enter a valid Number of Slots to be move")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.iSlotSize, <, 1)
+		f.Intrinsic.UI.Msgbox("Please enter a valid Number of Slots to be move")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sToWTS, =, "")
+		f.Intrinsic.UI.Msgbox("Please enter a valid Destination WTS")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.sToWTS.Length, <, 4)
+		f.Intrinsic.UI.Msgbox("Please enter a valid Destination WTS")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'Check If the WTSID are valid and get the num ID.
+	f.Intrinsic.String.Build("WELLTRAYSLOTID = '{0}' and Location = '{1}'", v.Local.sFromWTS, v.Screen.F_GCG_5274_BinMaint!cboBin2BinLoc.Value, v.Local.sFilter)
+	f.Data.DataView.Create("wellsDT", "fromWTSDV", 22, v.Local.sFilter, "WellTraySlotID ASC")
+	f.Intrinsic.Control.If(v.DataView.wellsDT!fromWTSDV.RowCount, =, 1)
+	f.Intrinsic.Control.AndIf(v.DataView.wellsDT!fromWTSDV(0).Active!FieldVal)
+		v.Global.iFromWTSID.Set(v.DataView.wellsDT!fromWTSDV(0).WTSnumID!FieldVal)
+		v.Local.iFromTraySize.Set(v.DataView.wellsDT!fromWTSDV(0).TraySize!FieldVal)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Please enter a valid Origin WTS")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Data.DataView.Close("wellsDT", "fromWTSDV")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("wellsDT", "fromWTSDV")
+	
+	f.Intrinsic.String.Build("WELLTRAYSLOTID = '{0}' and Location = '{1}'", v.Local.sToWTS, v.Screen.F_GCG_5274_BinMaint!cboBin2BinLoc.Value, v.Local.sFilter)
+	f.Data.DataView.Create("wellsDT", "toWTSDV", 22, v.Local.sFilter, "WellTraySlotID ASC")
+	f.Intrinsic.Control.If(v.DataView.wellsDT!toWTSDV.RowCount, =, 1)
+	f.Intrinsic.Control.AndIf(v.DataView.wellsDT!toWTSDV(0).Active!FieldVal)
+		v.Global.iToWTSID.Set(v.DataView.wellsDT!toWTSDV(0).WTSnumID!FieldVal)
+		v.Local.iToTraySize.Set(v.DataView.wellsDT!toWTSDV(0).TraySize!FieldVal)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Please enter a valid Destination WTS")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Data.DataView.Close("wellsDT", "toWTSDV")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("wellsDT", "toWTSDV")
+	
+	'Check if the tray sizes are the same in the Origin and ending WTS
+	f.Intrinsic.Control.If(v.Local.iFromTraySize, =, v.Local.iToTraySize)
+		v.Global.iSlotNum.Set(v.Screen.F_GCG_5274_BinMaint!txtSlotNum.Text!FieldVal)
+		'checks that the number of consequitive slots selected have the same tray size at the origin and destination
+		f.Intrinsic.Control.CallSub(checkTraySizeOrigin)
+		f.Intrinsic.Control.CallSub(checkTraySizeDestination)
+		f.Intrinsic.Control.If(v.Global.bSameSize)
+			'f.Intrinsic.Control.CallSub(OpenBin2Bin)
+			f.Intrinsic.Control.CallSub(massTransferBin2Bin)
+			'f.Intrinsic.Control.CallSub(moveParts)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Origin and Destination Tray Sizes do not match")
+		gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(True)
+	gui.F_GCG_5274_BinMaint.txtFromWTS.Text("")
+	gui.F_GCG_5274_BinMaint.txtToWTS.Text("")
+	gui.F_GCG_5274_BinMaint.txtSlotNum.Text("")
+f.Intrinsic.Control.Catch
+	gui.F_GCG_5274_BinMaint.cmdMoveParts.Enabled(False)
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdMoveParts_Click.End
+
+Program.Sub.checkTraySizeOrigin.Start
+v.Local.iCnt.Declare(Long, 0)
+v.Local.iFull.Declare(Long, 0)
+v.Local.iTraySize.Declare
+v.Global.bSameSize.Set(False)
+'Set local variables
+v.Local.iCnt.Set(v.Global.iFromWTSID)
+v.Local.iTraySize.Set(v.DataTable.wellsDT(v.Local.iCnt).TraySize!fieldVal)
+
+f.Intrinsic.Control.Try
+	'iCnt will hold the index for the table, will increase every time it loops.
+	'iFull will hold the control number of slots to be move, when full should match the slot number.
+	f.Intrinsic.Control.DoUntil(v.Local.iFull, =, v.Global.iSlotNum)
+		f.Intrinsic.Control.If(v.DataTable.wellsDT(v.Local.iCnt).Active!fieldVal)
+			f.Intrinsic.Control.If(v.DataTable.wellsDT(v.Local.iCnt).TraySize!fieldVal, =, v.Local.iTraySize)
+				f.Intrinsic.Math.Add(v.Local.iFull, 1, v.Local.iFull)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.UI.Msgbox("Tray sizes in the Origin selection do not match ")
+				v.Global.bSameSize.Set(False)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Math.Add(v.Local.iCnt, 1, v.Local.iCnt)
+	f.Intrinsic.Control.Loop
+	v.Global.bSameSize.Set(true)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.checkTraySizeOrigin.End
+
+Program.Sub.checkTraySizeDestination.Start
+v.Local.iCnt.Declare(Long, 0)
+v.Local.iFull.Declare(Long, 0)
+v.Local.iTraySize.Declare
+v.Global.bSameSize.Set(False)
+v.Local.sMsg.Declare
+f.Intrinsic.Control.Try
+	'Set local variables
+	v.Local.iCnt.Set(v.Global.iToWTSID)
+	v.Local.iTraySize.Set(v.DataTable.wellsDT(v.Local.iCnt).TraySize!fieldVal)
+	
+	'iCnt will hold the index for the table, will increase every time it loops.
+	'iFull will hold the control number of slots to be move, when full should match the slot number.
+	f.Intrinsic.Control.DoUntil(v.Local.iFull, =, v.Global.iSlotNum)
+		'Checks if slot is active.
+		f.Intrinsic.Control.If(v.DataTable.wellsDT(v.Local.iCnt).Active!fieldVal)
+			'Cheks if the slot is the same size
+			f.Intrinsic.Control.If(v.DataTable.wellsDT(v.Local.iCnt).TraySize!fieldVal, =, v.Local.iTraySize)
+				'Checks if the slot is not in use.
+				f.Intrinsic.Control.If(v.DataTable.wellsDT(v.Local.iCnt).Used!fieldVal, =, 0)
+					f.Intrinsic.Math.Add(v.Local.iFull, 1, v.Local.iFull)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("Tray {0} is in use.", v.DataTable.wellsDT(v.Local.iCnt).WellTraySlotID!fieldValTrim, v.Local.sMsg)
+					f.Intrinsic.UI.Msgbox(v.Local.sMsg)
+					v.Global.bSameSize.Set(False)
+					f.Intrinsic.Control.ExitSub
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Else
+				f.Intrinsic.UI.Msgbox("Tray sizes in the destination selection do not match ")
+				v.Global.bSameSize.Set(False)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Math.Add(v.Local.iCnt, 1, v.Local.iCnt)
+	f.Intrinsic.Control.Loop
+	v.Global.bSameSize.Set(true)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.checkTraySizeDestination.End
+
+Program.Sub.F_GCG_5274_BinMaint_UnLoad.Start
+f.Intrinsic.Control.CallSub(Serialize)
+f.Intrinsic.Control.End
+Program.Sub.F_GCG_5274_BinMaint_UnLoad.End
+
+Program.Sub.reconcileData.Start
+v.Local.iCnt.Declare
+v.Local.sSQL.Declare
+v.Local.sPart.Declare
+v.Local.sSerial.Declare
+v.Local.sBin.Declare
+v.Local.sHeat.Declare
+v.Local.sLocation.Declare
+
+f.Intrinsic.Control.Try
+	gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.SuspendLayout
+	f.Intrinsic.UI.InvokeWaitDialog("Reconciling the Data. Please Wait", "Data Reconcilation", 0)
+	
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.ODBC.Connection!con.Execute("Update GCG_5274_BinMaint Set Part = '', Serial = '', Heat = '', Used = '0'")
+		f.Intrinsic.UI.ChangeWaitStatus("Reconciling the Data. Please Wait", 10)
+		f.Data.DataTable.CreateFromSQL("itemsDT", "con", "Select Part, Serial_Number, Bin, Heat, Location from Item_Master where Quantity ='1' Order by Bin ASC")
+		'f.Data.DataView.Create("itemsDT", "itemsDV", 22)
+		'f.Data.DataView.ToDataTable("itemsDT", "itemsDV", "tmpItemDT", )
+		f.Intrinsic.UI.ChangeWaitStatus("Reconciling the Data. Please Wait", 40)
+		
+		f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.itemsDT.RowCount--, 1)
+			v.Local.sPart.Set(v.DataTable.itemsDT(v.Local.iCnt).Part!FieldVal)
+			v.Local.sSerial.Set(v.DataTable.itemsDT(v.Local.iCnt).Serial_Number!FieldVal)
+			v.Local.sBin.Set(v.DataTable.itemsDT(v.Local.iCnt).Bin!FieldValTrim)
+			v.Local.sHeat.Set(v.DataTable.itemsDT(v.Local.iCnt).Heat!FieldValTrim)
+			v.Local.sLocation.Set(v.DataTable.itemsDT(v.Local.iCnt).Location!FieldValTrim)
+			f.Intrinsic.String.Build("update GCG_5274_BinMaint set Part ='{0}', Serial = '{1}', Heat ='{2}', Used = '1' where Welltrayslotid = '{3}' and Location = '{4}'", v.Local.sPart, v.Local.sSerial, v.Local.sHeat, v.Local.sBin, v.Local.sLocation, v.Local.sSQL)
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+			
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+		f.Intrinsic.UI.ChangeWaitStatus("Reconciling the Data. Please Wait", 80)
+		f.Intrinsic.UI.CloseWaitDialog
+	gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.ResumeLayout
+	
+	'	f.Data.DataTable.CreateFromSQL("wellsDT", "con", "Select * from GCG_5274_BinMaint Order By WellTraySlotID ASC",true)
+	'	f.Data.DataView.Create("wellsDT", "wellsDV", 22, "ACTIVE = 'True'", "WellTraySlotID ASC" )
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.reconcileData.End
+
+Program.Sub.LoadData.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.DataTable.wellsDT.Exists)
+		f.Data.DataView.Close("wellsDT", "wellsDV")
+		f.Data.DataTable.Close("wellsDT")
+	f.Intrinsic.Control.EndIf
+	
+		'Load all the available bins, created a dataview that shows only active slots.
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("wellsDT", "con", "Select * from GCG_5274_BinMaint Order By WellTraySlotID, location ASC",true)
+		f.Data.DataView.Create("wellsDT", "wellsDV", 22, "ACTIVE = 'True'", "WellTraySlotID ASC" )
+	f.ODBC.Connection!con.Close
+	
+'	f.Intrinsic.Control.If(v.DataTable.wellsDT.RowCount, =, 0)
+'		f.Intrinsic.String.Build("{0}\GCG_5274_Bin_Maintenance_Load.g2u", v.Caller.GasDir)
+'		f.Global.General.CallSyncGAS("GCG_5274_Bin_Maintenance_Load.g2u", 0)
+'	f.Intrinsic.Control.EndIf
+	
+	
+	gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.AddGridviewFromDataview("wellsGV", "wellsDT", "wellsDV")
+	gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.MainView("wellsGV")
+	f.Intrinsic.Control.CallSub(gridViewProperties)
+	f.Intrinsic.Control.CallSub(Deserialize)
+	f.Intrinsic.Control.CallSub(traySizes)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.LoadData.End
+
+Program.Sub.massTransferBin2Bin.Start
+v.Local.sWTSFrom.Declare
+v.Local.sWTSTo.Declare
+v.Local.iWTSidFrom.Declare
+v.Local.iWTSidTo.Declare
+v.Local.sPart.Declare
+v.Local.sLoc.Declare
+v.Local.sSerial.Declare
+v.Local.sLot.Declare
+v.Local.sHeat.Declare
+v.Local.sParams.Declare
+v.Local.sFilter.Declare
+v.Local.iCnt.Declare
+v.Local.iLimit.Declare
+v.Local.sSQL.Declare
+v.Local.sLine.Declare
+v.Local.sText.Declare
+V.Local.sFile.Declare
+v.Local.sFqn.Declare
+v.Local.iLength.Declare
+v.Local.sJob.Declare
+v.Local.sMsg.Declare
+f.Intrinsic.Control.Try
+	v.Local.sLoc.Set(v.Screen.F_GCG_5274_BinMaint!cboBin2BinLoc.Value)
+	
+	v.Local.sWTSFrom.Set(v.Screen.F_GCG_5274_BinMaint!txtFromWTS.Text!FieldVal)
+	f.Intrinsic.String.Build("WELLTRAYSLOTID='{0}' and Location = '{1}'", v.Local.sWTSFrom, v.Local.sLoc, v.Local.sFilter)
+	f.Data.DataView.Create("wellsDT", "binTransferDV", 22, v.Local.sFilter, "")
+		v.Local.iWTSidFrom.Set(v.DataView.wellsDT!binTransferDV(0).WTSNUMID!FieldVal)
+	f.Data.DataView.Close("wellsDT", "binTransferDV")
+	
+	v.Local.sWTSTo.Set(v.Screen.F_GCG_5274_BinMaint!txtToWTS.Text!FieldVal)
+	f.Intrinsic.String.Build("WELLTRAYSLOTID='{0}'  and Location = '{1}'", v.Local.sWTSTo, v.Local.sLoc, v.Local.sFilter)
+	f.Data.DataView.Create("wellsDT", "binTransferDV", 22, v.Local.sFilter, "")
+		v.Local.iWTSidTo.Set(v.DataView.wellsDT!binTransferDV(0).WTSNUMID!FieldVal)
+	f.Data.DataView.Close("wellsDT", "binTransferDV")
+	
+	f.Intrinsic.Math.Sub(v.Screen.F_GCG_5274_BinMaint!txtSlotNum.Text!FieldVal, 1, v.Local.iLimit)
+	
+	f.Intrinsic.String.Build("Location ='{0}'", v.Local.sLoc, v.Local.sFilter)
+	f.Data.DataView.Create("wellsDT", "binTransferDV", 22, v.Local.sFilter, "")
+	f.Data.DataView.ToDataTable("wellsDT", "binTransferDV", "binTransferDT")
+	f.Data.DataView.Close("wellsDT", "binTransferDV")
+	
+	'f.Intrinsic.Control.BlockEvents
+
+	f.ODBC.Connection!con.OpenCompanyConnection
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.Local.iLimit, 1)
+		'f.Intrinsic.String.Build("WELLTRAYSLOTID='{0}'", v.Local.iWTSidFrom, v.Local.sFilter)
+		'f.Data.DataView.Create("wellsDT", "binTransferDV", 22, v.Local.sFilter, "")
+		
+		v.Local.sPart.Set(v.DataTable.binTransferDT(v.Local.iWTSidFrom).Part!FieldVal)
+		v.Local.sSerial.Set(v.DataTable.binTransferDT(v.Local.iWTSidFrom).Serial!FieldValTrim)
+		v.Local.sWTSFrom.Set(v.DataTable.binTransferDT(v.Local.iWTSidFrom).WellTraySlotId!FieldValTrim)
+		v.Local.sWTSTo.Set(v.DataTable.binTransferDT(v.Local.iWTSidTo).WellTraySlotId!FieldValTrim)
+		
+		f.Intrinsic.String.Build("Select * from Item_Master where Quantity ='1'and Part = '{0}'and Serial_Number = '{1}' and Bin = '{2}' and Location = '{3}'", v.Local.sPart, v.Local.sSerial, v.Local.sWTSFrom,  v.Screen.F_GCG_5274_BinMaint!cboBin2BinLoc.Value, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("singleItemDT", "con", v.Local.sSQL)
+		f.Intrinsic.Control.If(v.DataTable.singleItemDT.RowCount, =, 1)
+			v.Local.sLoc.Set(v.DataTable.singleItemDT(0).Location!FieldValTrim)
+			v.Local.sLot.Set(v.DataTable.singleItemDT(0).Lot!FieldValTrim)
+			v.Local.sHeat.Set(v.DataTable.singleItemDT(0).Heat!FieldValTrim)
+			f.Intrinsic.String.Len(v.Local.sHeat.Trim, v.Local.iLength)
+			
+'			f.Intrinsic.Control.If(v.Local.iLength, >, 5)
+'				f.Intrinsic.String.Left(v.Local.sHeat.Trim, 6, v.Local.sJob)
+'				f.Intrinsic.String.Build("Select distinct Heat from Item_History where Job = '{0}' and Heat <> '{1}' and Serial_number ='{2}'", v.Local.sJob, v.Local.sHeat, v.Local.sSerial, v.Local.sSQL)
+'				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.sHeat)
+'			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.If(v.Local.sHeat.Trim, =, "")
+				f.Intrinsic.String.Build("An error has ocurred trying to get the Source Code for Serial Number: '{0} form Item_History. Please Contact Global Shop.", v.Local.sSerial, v.Local.sMsg)
+				f.Intrinsic.UI.Msgbox(v.Local.sMsg)
+				f.ODBC.Connection!con.Close
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.String.Build("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13}", v.Local.sPart, v.Local.sLoc, "1", v.Local.sWTSFrom, v.Local.sWTSTo, v.Local.sLot, v.Local.sHeat, v.Local.sSerial, "", "", v.Local.sLoc, "Y", v.Caller.User, v.Ambient.Date.formatYYYYMMDD, v.Local.sLine)
+			'F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sLine)
+			
+			f.Intrinsic.String.Build("{0}{1}{2}", v.Local.sText, v.Local.sLine, v.Ambient.NewLine, v.Local.sText)
+			
+			f.Intrinsic.Math.Add(v.Local.iWTSidFrom, 1, v.Local.iWTSidFrom)
+			f.Intrinsic.Math.Add(v.Local.iWTSidTo, 1, v.Local.iWTSidTo)
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.Close("singleItemDT")
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.ODBC.Connection!con.Close
+	
+	f.Data.DataTable.Close("binTransferDT")
+	'f.Intrinsic.Control.UnBlockEvents
+	'v.Local.sFile.Set("")
+	
+	F.Intrinsic.String.Build("0{0}{1}BIN2BINTRNS",V.Caller.CompanyCode,V.Caller.Terminal,V.Local.sFile)
+	F.Intrinsic.String.Build("{0}\{1}",V.Caller.FilesDir,V.Local.sFile,V.Local.sFqn)
+	F.Intrinsic.File.String2File(V.Local.sFqn,V.Local.sText)
+	
+	f.Intrinsic.Task.LaunchGSSSync("LOT054UP", "-c", v.Local.sFile)
+	'f.Intrinsic.File.DeleteFile(v.Local.sFqn)
+	
+
+	gui.F_GCG_5274_BinMaint..Visible(false)
+	f.Intrinsic.Control.CallSub(reconcileData)
+	f.Intrinsic.Control.CallSub(LoadData)
+	gui.F_GCG_5274_BinMaint..Visible(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.massTransferBin2Bin.End
+
+Program.Sub.Serialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+
+f.Intrinsic.Control.If(v.DataTable.wellsDT.Exists, =, False)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.Serialize("wellsGV", v.Local.sSerialize)
+f.Global.Registry.AddValue(v.Caller.User, v.Caller.CompanyCode, "wellsGV", 5274, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, v.Local.sSerialize)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "wellsGV", 5274, 0, 5, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize, <>, "")
+		f.ODBC.Connection!common.OpenCommonConnection
+			f.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '5274'")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "wellsGV", "5274", 1000, 6, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize.Trim, <>, "")
+		gui.F_GCG_5274_BinMaint.GsGcBinMaintenance.Deserialize(v.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
