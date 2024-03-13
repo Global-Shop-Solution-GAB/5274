@@ -1,0 +1,934 @@
+Program.Sub.ScreenSU.Start
+Gui.F_RadSourcesReceipt..Create
+Gui.F_RadSourcesReceipt..Size(17535,10515)
+Gui.F_RadSourcesReceipt..MinX(0)
+Gui.F_RadSourcesReceipt..MinY(0)
+Gui.F_RadSourcesReceipt..Position(0,0)
+Gui.F_RadSourcesReceipt..BackColor(-2147483633)
+Gui.F_RadSourcesReceipt..MousePointer(0)
+Gui.F_RadSourcesReceipt..Event(UnLoad,F_RadSourcesReceipt_UnLoad)
+Gui.F_RadSourcesReceipt..Caption("P.O. Receipt")
+Gui.F_RadSourcesReceipt..Sizeable(False)
+Gui.F_RadSourcesReceipt.GsGridControl1.Create(GsGridControl)
+Gui.F_RadSourcesReceipt.GsGridControl1.Size(17145,7065)
+Gui.F_RadSourcesReceipt.GsGridControl1.Position(105,2310)
+Gui.F_RadSourcesReceipt.GsGridControl1.Anchor(15)
+Gui.F_RadSourcesReceipt.frmPOReceipt.Create(Frame)
+Gui.F_RadSourcesReceipt.frmPOReceipt.Size(2640,1080)
+Gui.F_RadSourcesReceipt.frmPOReceipt.Position(135,75)
+Gui.F_RadSourcesReceipt.frmPOReceipt.Caption("P.O. Receipt")
+Gui.F_RadSourcesReceipt.lbl3.Create(Label,"-",True,180,255,0,1365,615,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl3.Parent("frmPOReceipt")
+Gui.F_RadSourcesReceipt.txtPOLine.Create(TextBox,"",True,345,300,0,1575,555,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtPOLine.Parent("frmPOReceipt")
+Gui.F_RadSourcesReceipt.txtPO.Create(TextBox,"",True,1215,300,0,90,555,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtPO.Parent("frmPOReceipt")
+Gui.F_RadSourcesReceipt.lblPO.Create(Label,"Purchase Order",True,1440,255,0,105,300,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lblPO.Parent("frmPOReceipt")
+Gui.F_RadSourcesReceipt.cmdPOLineBrowser.Create(Button)
+Gui.F_RadSourcesReceipt.cmdPOLineBrowser.Size(375,375)
+Gui.F_RadSourcesReceipt.cmdPOLineBrowser.Position(2070,525)
+Gui.F_RadSourcesReceipt.cmdPOLineBrowser.Parent("frmPOReceipt")
+Gui.F_RadSourcesReceipt.cmdPOLineBrowser.Caption("^")
+Gui.F_RadSourcesReceipt.cmdPOLineBrowser.Event(Click,cmdPOLineBrowser_Click)
+Gui.F_RadSourcesReceipt.frmStandAlone.Create(Frame)
+Gui.F_RadSourcesReceipt.frmStandAlone.Size(4125,1080)
+Gui.F_RadSourcesReceipt.frmStandAlone.Position(2880,75)
+Gui.F_RadSourcesReceipt.frmStandAlone.Caption("Stand Alone Receipt")
+Gui.F_RadSourcesReceipt.lblSAPartNumber.Create(Label,"Part Number",True,1215,255,0,75,315,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lblSAPartNumber.Parent("frmStandAlone")
+Gui.F_RadSourcesReceipt.txtSAPartNumber.Create(TextBox,"",True,1575,300,0,105,540,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtSAPartNumber.Parent("frmStandAlone")
+Gui.F_RadSourcesReceipt.cmdPNBrowser.Create(Button)
+Gui.F_RadSourcesReceipt.cmdPNBrowser.Size(435,375)
+Gui.F_RadSourcesReceipt.cmdPNBrowser.Position(1740,480)
+Gui.F_RadSourcesReceipt.cmdPNBrowser.Parent("frmStandAlone")
+Gui.F_RadSourcesReceipt.cmdPNBrowser.Caption("^")
+Gui.F_RadSourcesReceipt.cmdPNBrowser.Event(Click,cmdPNBrowser_Click)
+Gui.F_RadSourcesReceipt.cmdGLAccountBrowser.Create(Button)
+Gui.F_RadSourcesReceipt.cmdGLAccountBrowser.Size(435,375)
+Gui.F_RadSourcesReceipt.cmdGLAccountBrowser.Position(3405,480)
+Gui.F_RadSourcesReceipt.cmdGLAccountBrowser.Parent("frmStandAlone")
+Gui.F_RadSourcesReceipt.cmdGLAccountBrowser.Caption("^")
+Gui.F_RadSourcesReceipt.cmdGLAccountBrowser.Event(Click,cmdGLAccountBrowser_Click)
+Gui.F_RadSourcesReceipt.lbl4.Create(Label,"GL Account",True,1020,255,0,2310,300,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl4.Parent("frmStandAlone")
+Gui.F_RadSourcesReceipt.txtGlAccount.Create(TextBox,"",True,990,300,0,2295,525,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtGlAccount.Parent("frmStandAlone")
+Gui.F_RadSourcesReceipt.frmFileUpload.Create(Frame)
+Gui.F_RadSourcesReceipt.frmFileUpload.Size(5250,1080)
+Gui.F_RadSourcesReceipt.frmFileUpload.Position(10395,75)
+Gui.F_RadSourcesReceipt.frmFileUpload.Caption("File Upload")
+Gui.F_RadSourcesReceipt.frmFileUpload.Anchor(9)
+Gui.F_RadSourcesReceipt.cmdFileUpload.Create(Button)
+Gui.F_RadSourcesReceipt.cmdFileUpload.Size(855,375)
+Gui.F_RadSourcesReceipt.cmdFileUpload.Position(4290,450)
+Gui.F_RadSourcesReceipt.cmdFileUpload.Parent("frmFileUpload")
+Gui.F_RadSourcesReceipt.cmdFileUpload.Caption("Upload")
+Gui.F_RadSourcesReceipt.cmdFileUpload.Event(Click,cmdFileUpload_Click)
+Gui.F_RadSourcesReceipt.cmdFileBrowser.Create(Button)
+Gui.F_RadSourcesReceipt.cmdFileBrowser.Size(405,345)
+Gui.F_RadSourcesReceipt.cmdFileBrowser.Position(3795,465)
+Gui.F_RadSourcesReceipt.cmdFileBrowser.Parent("frmFileUpload")
+Gui.F_RadSourcesReceipt.cmdFileBrowser.Caption("^")
+Gui.F_RadSourcesReceipt.cmdFileBrowser.Event(Click,cmdFileBrowser_Click)
+Gui.F_RadSourcesReceipt.txtFileUpload.Create(TextBox,"",True,3690,300,0,60,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtFileUpload.Parent("frmFileUpload")
+Gui.F_RadSourcesReceipt.lblFile.Create(Label,"File",True,1935,255,0,75,300,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lblFile.Parent("frmFileUpload")
+Gui.F_RadSourcesReceipt.frmMode.Create(Frame)
+Gui.F_RadSourcesReceipt.frmMode.Size(1500,1080)
+Gui.F_RadSourcesReceipt.frmMode.Position(15735,60)
+Gui.F_RadSourcesReceipt.frmMode.Caption("Mode")
+Gui.F_RadSourcesReceipt.frmMode.Anchor(9)
+Gui.F_RadSourcesReceipt.optPOReceipt.Create(Option)
+Gui.F_RadSourcesReceipt.optPOReceipt.Size(1335,255)
+Gui.F_RadSourcesReceipt.optPOReceipt.Position(60,330)
+Gui.F_RadSourcesReceipt.optPOReceipt.Parent("frmMode")
+Gui.F_RadSourcesReceipt.optPOReceipt.Caption("P.O. Receipt")
+Gui.F_RadSourcesReceipt.optPOReceipt.Event(Click,optPOReceipt_Click)
+Gui.F_RadSourcesReceipt.optStandAlone.Create(Option)
+Gui.F_RadSourcesReceipt.optStandAlone.Size(1260,255)
+Gui.F_RadSourcesReceipt.optStandAlone.Position(75,630)
+Gui.F_RadSourcesReceipt.optStandAlone.Parent("frmMode")
+Gui.F_RadSourcesReceipt.optStandAlone.Caption("Stand Alone Issue")
+Gui.F_RadSourcesReceipt.optStandAlone.Event(Click,optStandAlone_Click)
+Gui.F_RadSourcesReceipt.frmBinMaint.Create(Frame)
+Gui.F_RadSourcesReceipt.frmBinMaint.Size(3270,1080)
+Gui.F_RadSourcesReceipt.frmBinMaint.Position(7050,75)
+Gui.F_RadSourcesReceipt.frmBinMaint.Caption("Bin Maintenance")
+Gui.F_RadSourcesReceipt.cmdNextAvailable.Create(Button)
+Gui.F_RadSourcesReceipt.cmdNextAvailable.Size(1545,375)
+Gui.F_RadSourcesReceipt.cmdNextAvailable.Position(1620,225)
+Gui.F_RadSourcesReceipt.cmdNextAvailable.Parent("frmBinMaint")
+Gui.F_RadSourcesReceipt.cmdNextAvailable.Caption("Next Available")
+Gui.F_RadSourcesReceipt.cmdNextAvailable.Event(Click,cmdNextAvailable_Click)
+Gui.F_RadSourcesReceipt.cmdBinMaintenance.Create(Button)
+Gui.F_RadSourcesReceipt.cmdBinMaintenance.Size(1530,375)
+Gui.F_RadSourcesReceipt.cmdBinMaintenance.Position(975,630)
+Gui.F_RadSourcesReceipt.cmdBinMaintenance.Parent("frmBinMaint")
+Gui.F_RadSourcesReceipt.cmdBinMaintenance.Caption("Bin Maintenance")
+Gui.F_RadSourcesReceipt.cmdBinMaintenance.Event(Click,cmdBinMaintenance_Click)
+Gui.F_RadSourcesReceipt.ddlTraySize.Create(DropDownList)
+Gui.F_RadSourcesReceipt.ddlTraySize.Size(1470,330)
+Gui.F_RadSourcesReceipt.ddlTraySize.Position(60,240)
+Gui.F_RadSourcesReceipt.ddlTraySize.Parent("frmBinMaint")
+Gui.F_RadSourcesReceipt.ddlTraySize.DefaultValue("")
+Gui.F_RadSourcesReceipt.cmdInvStatus.Create(Button)
+Gui.F_RadSourcesReceipt.cmdInvStatus.Size(1470,375)
+Gui.F_RadSourcesReceipt.cmdInvStatus.Position(105,9510)
+Gui.F_RadSourcesReceipt.cmdInvStatus.Caption("Inv Status")
+Gui.F_RadSourcesReceipt.cmdInvStatus.Anchor(6)
+Gui.F_RadSourcesReceipt.cmdInvStatus.Event(Click,cmdInvStatus_Click)
+Gui.F_RadSourcesReceipt.cmdViewPO.Create(Button)
+Gui.F_RadSourcesReceipt.cmdViewPO.Size(1470,375)
+Gui.F_RadSourcesReceipt.cmdViewPO.Position(1620,9510)
+Gui.F_RadSourcesReceipt.cmdViewPO.Caption("View PO")
+Gui.F_RadSourcesReceipt.cmdViewPO.Anchor(6)
+Gui.F_RadSourcesReceipt.cmdViewPO.Event(Click,cmdViewPO_Click)
+Gui.F_RadSourcesReceipt.cmdCancel.Create(Button)
+Gui.F_RadSourcesReceipt.cmdCancel.Size(1470,375)
+Gui.F_RadSourcesReceipt.cmdCancel.Position(3135,9495)
+Gui.F_RadSourcesReceipt.cmdCancel.Caption("Cancel")
+Gui.F_RadSourcesReceipt.cmdCancel.Anchor(6)
+Gui.F_RadSourcesReceipt.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.F_RadSourcesReceipt.frmPartInfo.Create(Frame)
+Gui.F_RadSourcesReceipt.frmPartInfo.Size(13650,1050)
+Gui.F_RadSourcesReceipt.frmPartInfo.Position(120,1215)
+Gui.F_RadSourcesReceipt.frmPartInfo.Caption("Part Info Reception")
+Gui.F_RadSourcesReceipt.lbl8.Create(Label,"Part Number",True,1140,255,0,90,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl8.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lbl9.Create(Label,"Loc",True,435,255,0,2040,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl9.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lblQTY.Create(Label,"Quantity",True,765,255,0,5205,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lblQTY.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lbl11.Create(Label,"Description",True,1140,255,0,2580,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl11.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lbl12.Create(Label,"Inventory Bin",True,1095,255,0,12420,285,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl12.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtBin.Create(TextBox,"",True,1020,300,0,12420,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtBin.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtQTY.Create(TextBox,"",True,795,300,0,5205,495,False,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtQTY.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtQTY.Locked(True)
+Gui.F_RadSourcesReceipt.txtDesc.Create(TextBox,"",True,2550,300,0,2580,495,False,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtDesc.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtDesc.Locked(True)
+Gui.F_RadSourcesReceipt.txtLoc.Create(TextBox,"",True,450,300,0,2040,495,False,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtLoc.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtLoc.Locked(True)
+Gui.F_RadSourcesReceipt.txtPartNum.Create(TextBox,"",True,1860,300,0,105,495,False,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtPartNum.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtPartNum.Locked(True)
+Gui.F_RadSourcesReceipt.lbl6.Create(Label,"UPL QTY",True,825,255,0,6045,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl6.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtUpl_Qty.Create(TextBox,"",True,735,300,0,6060,495,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtUpl_Qty.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lbl7.Create(Label,"Heat",True,615,255,0,6930,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl7.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtHeat.Create(TextBox,"",True,705,300,0,6885,495,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtHeat.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lbl13.Create(Label,"Last Rec'd Date",True,1305,255,0,8415,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl13.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lbl14.Create(Label,"Certification Date",True,1365,255,0,9735,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl14.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.dtpCertDate.Create(DatePicker)
+Gui.F_RadSourcesReceipt.dtpCertDate.Size(1275,285)
+Gui.F_RadSourcesReceipt.dtpCertDate.Position(9780,525)
+Gui.F_RadSourcesReceipt.dtpCertDate.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.dtpCertDate.DefaultValue("0")
+Gui.F_RadSourcesReceipt.lbl15.Create(Label,"Unit Cost",True,885,255,0,11310,285,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl15.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.txtUnitCost.Create(TextBox,"",True,1215,300,0,11130,510,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtUnitCost.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.dtpLastRecDate.Create(DatePicker)
+Gui.F_RadSourcesReceipt.dtpLastRecDate.Size(1155,285)
+Gui.F_RadSourcesReceipt.dtpLastRecDate.Position(8505,525)
+Gui.F_RadSourcesReceipt.dtpLastRecDate.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.dtpLastRecDate.DefaultValue("0")
+Gui.F_RadSourcesReceipt.txtLot.Create(TextBox,"",True,705,300,0,7680,495,True,0,"Arial",8,-2147483643,1)
+Gui.F_RadSourcesReceipt.txtLot.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.lbl10.Create(Label,"Lot",True,615,255,0,7725,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_RadSourcesReceipt.lbl10.Parent("frmPartInfo")
+Gui.F_RadSourcesReceipt.cmdLoadGrid.Create(Button)
+Gui.F_RadSourcesReceipt.cmdLoadGrid.Size(1455,375)
+Gui.F_RadSourcesReceipt.cmdLoadGrid.Position(15720,1815)
+Gui.F_RadSourcesReceipt.cmdLoadGrid.Anchor(9)
+Gui.F_RadSourcesReceipt.cmdLoadGrid.Caption("Load Grid")
+Gui.F_RadSourcesReceipt.cmdLoadGrid.Event(Click,cmdLoadGrid_Click)
+Gui.F_RadSourcesReceipt.cmdReceive.Create(Button)
+Gui.F_RadSourcesReceipt.cmdReceive.Size(1410,375)
+Gui.F_RadSourcesReceipt.cmdReceive.Position(15705,9435)
+Gui.F_RadSourcesReceipt.cmdReceive.Anchor(10)
+Gui.F_RadSourcesReceipt.cmdReceive.Caption("Receive ")
+Gui.F_RadSourcesReceipt.cmdReceive.Event(Click,cmdReceive_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sFileLocation.Declare
+v.Global.iQty.Declare
+v.Global.sDateHolder.Declare
+v.Global.bPOLoad.Declare
+v.Global.bFileUpload.Declare
+v.Global.iWTSidStart.Declare
+v.Global.iWTSidEnd.Declare
+'Program.External.Include.Library("6013.lib")
+Program.External.Include.Library("6016.lib")
+Program.Sub.Preflight.End
+
+'Author: Alejandro Anazco Villarreal
+'Customer: Troxler
+'Program Name: GCG_5274_ReceiveActive.g2u
+'Date Started: 2/18/2019 (Comments Added)
+'Description: 
+'P.O. Receipt or Stand Alone Receipt using a csv file with all the serial numbers and user fields.
+'Allows user to set last receive date, certification date, heat and Bin. 
+Program.Sub.Main.Start
+gui.F_RadSourcesReceipt..Show
+f.Intrinsic.Control.CallSub(defaultScreen)
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5274_ReceiveActive.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.defaultScreen.Start
+gui.F_RadSourcesReceipt.frmStandAlone.Enabled(false)
+gui.F_RadSourcesReceipt.optPOReceipt.Value(1)
+gui.F_RadSourcesReceipt.ddlTraySize.AddItem("1", 0)
+gui.F_RadSourcesReceipt.ddlTraySize.AddItem("5", 1)
+gui.F_RadSourcesReceipt.ddlTraySize.AddItem("10", 2)
+gui.F_RadSourcesReceipt.ddlTraySize.AddItem("15", 3)
+gui.F_RadSourcesReceipt.ddlTraySize.AddItem("20", 4)
+gui.F_RadSourcesReceipt.ddlTraySize.ListIndex(4)
+gui.F_RadSourcesReceipt.cmdNextAvailable.Enabled(false)
+gui.F_RadSourcesReceipt.cmdLoadGrid.Enabled(False)
+gui.F_RadSourcesReceipt.cmdReceive.Enabled(False)
+gui.F_RadSourcesReceipt.cmdInvStatus.Enabled(False)
+gui.F_RadSourcesReceipt.cmdViewPO.Enabled(False)
+gui.F_RadSourcesReceipt.GsGridControl1.SuspendLayout()
+Program.Sub.defaultScreen.End
+
+Program.Sub.optPOReceipt_Click.Start
+'Enables the P.O. Receipts frame and disables the Stand Alone Receipt frame
+f.Intrinsic.Control.If(v.Screen.F_RadSourcesReceipt!optPOReceipt.Value)
+	gui.F_RadSourcesReceipt.frmPOReceipt.Enabled(True)
+	gui.F_RadSourcesReceipt.frmStandAlone.Enabled(False)
+f.Intrinsic.Control.Else
+	gui.F_RadSourcesReceipt.frmStandAlone.Enabled(True)
+	gui.F_RadSourcesReceipt.frmPOReceipt.Enabled(False)
+f.Intrinsic.Control.EndIf
+Program.Sub.optPOReceipt_Click.End
+
+Program.Sub.optStandAlone_Click.Start
+'Enables the Stand Alone Receipt frame and disables the P.O. Receipts frame
+f.Intrinsic.Control.If(v.Screen.F_RadSourcesReceipt!optStandAlone.Value)
+	gui.F_RadSourcesReceipt.frmPOReceipt.Enabled(False)
+	gui.F_RadSourcesReceipt.frmStandAlone.Enabled(True)
+f.Intrinsic.Control.Else
+	gui.F_RadSourcesReceipt.frmPOReceipt.Enabled(True)
+	gui.F_RadSourcesReceipt.frmStandAlone.Enabled(False)
+f.Intrinsic.Control.EndIf
+Program.Sub.optStandAlone_Click.End
+
+Program.Sub.cmdPOLineBrowser_Click.Start
+v.Local.sRet.Declare
+v.Local.sSQL.Declare
+v.Local.sTemp.Declare
+
+f.Intrinsic.Control.Try
+	'P.O. Line Browser
+	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.UI.Browser("PO LINES", "con", "Select Purchase_Order, Record_No, Part, Location, Description, qty_order from v_po_lines where Flag_recv_close <> 'Y'  and purchase_order in (select purchase_order from V_po_header where Type = '0') order by Purchase_Order ASC;", "PO*!*Record*!*Part*!*Location*!*Description*!*QTY_ORDERED", "100*!*100*!*50*!*100*!*100*!*100", v.Local.sRet)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.sRet, =, "***CANCEL***")
+		f.Intrinsic.Control.If(v.Screen.F_RadSourcesReceipt!txtPO, =, "")
+		f.Intrinsic.Control.AndIf(v.Screen.F_RadSourcesReceipt!txtPOLine, =, "")
+			v.Global.bPOLoad.Set(False)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else	
+		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+		v.Local.sRet.RedimPreserve(0,4)
+		'setting the information from the browser into the local variables.
+		gui.F_RadSourcesReceipt.txtPO.Text(v.Local.sRet(0))
+		f.Intrinsic.String.Left(v.Local.sRet(1), 3, v.Local.sTemp)
+		gui.F_RadSourcesReceipt.txtPOLine.Text(v.Local.sTemp)
+		gui.F_RadSourcesReceipt.txtPartNum.Text(v.Local.sRet(2))
+		gui.F_RadSourcesReceipt.txtLoc.Text(v.Local.sRet(3))
+		gui.F_RadSourcesReceipt.txtDesc.Text(v.Local.sRet(4))
+		gui.F_RadSourcesReceipt.txtQTY.Text(v.Local.sRet(5))
+		'Sets the POLoad global variable to true. which means the user has selected a P.O. Line.
+		v.Global.bPOLoad.Set(True)
+		'Getting extra information from P.O. Line datatable.
+		f.ODBC.Connection!con.OpenCompanyConnection
+			f.Intrinsic.String.Build("Select * from v_po_lines where Purchase_order = '{0}' and record_no ='{1}'", v.Local.sRet(0), v.Local.sRet(1), v.Local.sSQL)
+			f.Data.DataTable.CreateFromSQL("poLineDT", "con", v.Local.sSQL)
+				f.Intrinsic.Control.If(v.DataTable.poLineDT.RowCount, =, 1)
+					gui.F_RadSourcesReceipt.txtQTY.Text(v.DataTable.poLineDT(0).qty_order!FieldVal)
+					gui.F_RadSourcesReceipt.txtUnitCost.Text(v.DataTable.poLineDT(0).cost!FieldVal)
+					gui.F_RadSourcesReceipt.cmdInvStatus.Enabled(True)
+					gui.F_RadSourcesReceipt.cmdViewPO.Enabled(True)
+				f.Intrinsic.Control.EndIf
+			f.Data.DataTable.Close("poLineDT")
+		f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPOLineBrowser_Click.End
+
+Program.Sub.cmdBinMaintenance_Click.Start
+v.Local.sFileLoc.Declare
+f.Intrinsic.Control.Try
+	'calls the bin maintenance program.
+	f.Intrinsic.String.Build("{0}\GCG_5274_Bin_Maintenance.g2u", v.Caller.GasDir, v.Local.sFileLoc)
+	f.Global.General.CallSyncGAS(v.Local.sFileLoc)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBinMaintenance_Click.End
+
+Program.Sub.cmdFileUpload_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Global.sFileLocation, =, "")
+		f.Intrinsic.UI.Msgbox("Select a File.")
+	f.Intrinsic.Control.Else
+		'calls the subroutine that reads the csv file.
+		f.Intrinsic.Control.CallSub(loadCSV)
+		'enables buttons dependent on uploading a correct file.
+		gui.F_RadSourcesReceipt.cmdNextAvailable.Enabled(true)
+		gui.F_RadSourcesReceipt.cmdLoadGrid.Enabled(true)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFileUpload_Click.End
+
+Program.Sub.F_RadSourcesReceipt_UnLoad.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(Serialize)
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.F_RadSourcesReceipt_UnLoad.End
+
+Program.Sub.cmdFileBrowser_Click.Start
+v.Local.sRet.Declare
+'browser for XLS file.
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.ShowOpenFileDialog("", "*.xls", v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet, =, "***CANCEL***")
+	f.Intrinsic.Control.Else
+		v.Global.sFileLocation.Set(v.Local.sRet)
+		gui.F_RadSourcesReceipt.txtFileUpload.Text(v.Local.sRet)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFileBrowser_Click.End
+
+Program.Sub.loadCSV.Start
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+	'reads the XLS file using the 5 fields format with no header.
+	f.Intrinsic.Control.If(v.Global.sFileLocation, !=, "")
+		f.Automation.MSExcel.ReadSpreadsheet(v.Global.sFileLocation, v.Local.sRet)
+		f.Intrinsic.Control.If(v.DataTable.headerDT.Exists)
+			f.Data.DataTable.Close("headerDT")
+		f.Intrinsic.Control.EndIf
+		'creates a datatable for the file read. and shows it to the user.
+		f.Data.DataTable.CreateFromString("headerDT", v.Local.sRet, "Serial*!*NPSMantissa*!*MeasureDate*!*LeakTestDate*!*Activity", "String*!*String*!*String*!*String*!*String", "*!*", "$!$", true)
+		gui.F_RadSourcesReceipt.GsGridControl1.ResumeLayout()
+		gui.F_RadSourcesReceipt.GsGridControl1.AddGridviewFromDatatable("headerGV", "headerDT")
+		gui.F_RadSourcesReceipt.GsGridControl1.MainView("headerGV")
+		v.Global.bFileUpload.Set(true)
+	f.Intrinsic.Control.EndIf
+	gui.F_RadSourcesReceipt.txtUpl_Qty.Text(v.DataTable.headerDT.RowCount)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadCSV.End
+
+Program.Sub.loadGrid.Start
+v.Local.iColIndex.Declare
+v.Local.iCnt.Declare
+f.Intrinsic.Control.Try
+
+	f.Data.DataTable.Create("uploadDT", true)
+	f.Data.DataTable.AddColumn("uploadDT", "PartNumber", "string", v.Screen.F_RadSourcesReceipt!txtPartNum.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "Loc", "string", v.Screen.F_RadSourcesReceipt!txtLoc.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "Bin", "string", v.Screen.F_RadSourcesReceipt!txtBin.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "Heat", "string", v.Screen.F_RadSourcesReceipt!txtHeat.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "Lot", "string", v.Screen.F_RadSourcesReceipt!txtLot.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "QTY", "string", "1")
+	
+	f.Data.DataTable.Merge("headerDT", "uploadDT", true, 1)
+	
+	f.Data.DataTable.AddColumn("uploadDT", "LastRecDate", "string", v.Screen.F_RadSourcesReceipt!dtpLastRecDate.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "PO", "string", v.Screen.F_RadSourcesReceipt!txtPO.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "UnitCost", "string", v.Screen.F_RadSourcesReceipt!txtUnitCost.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "CertDate", "string", v.Screen.F_RadSourcesReceipt!dtpCertDate.Text!FieldValue)
+	f.Data.DataTable.AddColumn("uploadDT", "IndexCol", "string", "1")
+	
+	v.Local.iColIndex.Set(1)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.uploadDT.RowCount--, 1)
+		f.Data.DataTable.SetValue("uploadDT", v.Local.iCnt, "IndexCol", v.Local.iColIndex)
+		gui.F_RadSourcesReceipt.txtUpl_Qty.Text(v.Local.iColIndex)
+		f.Intrinsic.Math.Add(v.Local.iColIndex, 1, v.Local.iColIndex)
+		'F_RadSourcesReceiptatting Dates.
+		f.Intrinsic.Control.CallSub(F_RadSourcesReceiptatDate, sDate, v.DataTable.uploadDT(v.Local.iCnt).MeasureDate!FieldVal)
+		f.Data.DataTable.SetValue("uploadDT", v.Local.iCnt, "MeasureDate", v.Global.sDateHolder)
+		
+		f.Intrinsic.Control.CallSub(F_RadSourcesReceiptatDate, sDate, v.DataTable.uploadDT(v.Local.iCnt).LeakTestDate!FieldVal)
+		f.Data.DataTable.SetValue("uploadDT", v.Local.iCnt, "LeakTestDate", v.Global.sDateHolder)
+		
+		f.Intrinsic.Control.CallSub(F_RadSourcesReceiptatDate, sDate, v.DataTable.uploadDT(v.Local.iCnt).LastRecDate!FieldVal)
+		f.Data.DataTable.SetValue("uploadDT", v.Local.iCnt, "LastRecDate", v.Global.sDateHolder)
+		
+		f.Intrinsic.Control.CallSub(F_RadSourcesReceiptatDate, sDate, v.DataTable.uploadDT(v.Local.iCnt).CertDate!FieldVal)
+		f.Data.DataTable.SetValue("uploadDT", v.Local.iCnt, "CertDate", v.Global.sDateHolder)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	
+	gui.F_RadSourcesReceipt.GsGridControl1.AddGridviewFromDatatable("headerGV", "uploadDT")
+	gui.F_RadSourcesReceipt.GsGridControl1.SetColumnProperty("headerGV", "QTY", "VisibleIndex", 5)
+	gui.F_RadSourcesReceipt.GsGridControl1.MainView("headerGV")
+	gui.F_RadSourcesReceipt.cmdReceive.Enabled(true)
+	f.Intrinsic.Control.CallSub(Deserialize)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadGrid.End
+
+Program.Sub.cmdLoadGrid_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.DataTable.headerDT.Exists)
+		f.Data.DataTable.Close("headerDT")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.DataTable.uploadDT.Exists)
+		F.Data.DataTable.Close("uploadDT")
+	f.Intrinsic.Control.EndIf
+	'reloads the data 
+	f.Intrinsic.Control.If(v.Global.bPOLoad)
+	f.Intrinsic.Control.AndIf(v.Global.bFileUpload)
+		f.Intrinsic.Control.CallSub(loadCSV)
+		f.Intrinsic.Control.CallSub(loadGrid)
+		f.Intrinsic.Control.CallSub(checkBinSpace)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdLoadGrid_Click.End
+
+Program.Sub.cmdReceive_Click.Start
+v.Local.sRet.Declare
+f.Intrinsic.Control.Try
+'Call subroutine depending on which option button is activated.
+	f.Intrinsic.Control.If(v.Screen.F_RadSourcesReceipt!optPOReceipt.Value)
+		f.Intrinsic.UI.Msgbox("Do you wish to receive the P.O.", "", 3, v.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.sRet, =, "6")
+			f.Intrinsic.Control.CallSub(PO_Receipt)
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.ElseIf(v.Screen.F_RadSourcesReceipt!optStandAlone.Value)
+		f.Intrinsic.UI.Msgbox("Do you wish to receive the stand alone P.O.", "", 3, v.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.sRet, =, "6")
+			f.Intrinsic.Control.CallSub(standAloneReceipt)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_RadSourcesReceipt.cmdReceive.Enabled(false)
+	gui.F_RadSourcesReceipt.txtBin.Text("")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdReceive_Click.End
+
+Program.Sub.F_RadSourcesReceiptatDate.Start
+v.Local.sFullDateHolder.Declare
+v.Local.sDateHolder.Declare
+f.Intrinsic.Control.Try
+	'sets the dates to a ######## format.
+	f.Intrinsic.String.Split(v.Args.sDate, " ", v.Local.sFullDateHolder)
+	f.Intrinsic.String.Split(v.Local.sFullDateHolder(0), "/", v.Local.sDateHolder)
+	v.Local.sDateHolder.RedimPreserve(0,2)
+	
+	f.Intrinsic.String.LPad(v.Local.sDateHolder(0), "0", 2, v.Local.sDateHolder(0))
+	f.Intrinsic.String.LPad(v.Local.sDateHolder(1), "0", 2, v.Local.sDateHolder(1))
+	
+	f.Intrinsic.String.Build("{0}{1}{2}", v.Local.sDateHolder(0), v.Local.sDateHolder(1), v.Local.sDateHolder(2), v.Global.sDateHolder)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.F_RadSourcesReceiptatDate.End
+
+Program.Sub.checkBinSpace.Start
+v.Local.sTraySize.Declare
+v.Local.sSQL.Declare
+v.Local.sFilter.Declare
+v.Local.iCnt.Declare
+v.Local.iCnt2.Declare
+v.Local.iDVcnt.Declare
+v.Local.sLocation.Declare
+v.Local.sLocation.Set(v.Screen.F_RadSourcesReceipt!txtLoc.Text)
+v.Local.sTraySize.set(v.Screen.F_RadSourcesReceipt!ddlTraySize.Value)
+v.Local.iCnt.Set(1)
+
+'this subroutine looks for the next available Well Tray Slot that has x number of consecutive slots available for the complete update
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		v.Local.sSql.Set("Select * from GCG_5274_BinMaint where Active = '1' order by wtsNumId asc")
+		f.Data.DataTable.CreateFromSQL("binRecordsDT", "con", v.Local.sSQL)
+	f.ODBC.Connection!con.Close 
+	
+	'creates a dataview for all active slots, of the same tray size matching the enter data in the screen
+	f.Intrinsic.String.Build("TraySize = '{0}' and WellTraySlotID = '{1}' and Location = '{2}'", v.Local.sTraySize, v.Screen.F_RadSourcesReceipt!txtBin.text!FieldValTrim, v.Local.sLocation, v.Local.sFilter)
+	f.Data.DataView.Create("binRecordsDT", "binTraySizeDV", 22, v.Local.sFilter, "wtsNumId asc")
+		'if it finds a match, it gets it NumID that matches its rowcount--, else it is 0
+		
+		f.Intrinsic.Control.If(v.DataView.binRecordsDT!binTraySizeDV.RowCount, = ,1)
+			v.Local.iDVcnt.Set(v.DataView.binRecordsDT!binTraySizeDV(0).WTSnumID!FieldVal)
+		f.Intrinsic.Control.Else
+			v.Local.iDVcnt.Set(0)
+		f.Intrinsic.Control.EndIf
+	f.Data.DataView.Close("binRecordsDT", "binTraySizeDV")
+	
+	'calls the next available subroutine. with the loop counter as arg.
+	f.Intrinsic.Control.CallSub(nextAvailable, iStartingDVcnt, v.Local.iDVcnt)
+	'set's the value of each row to the consecutive WTSID.
+	f.Intrinsic.Control.For(v.Local.iCnt, v.Global.iWTSidStart, v.Global.iWTSidEnd, 1)
+		f.Intrinsic.String.Build("TraySize = '{0}' and wtsNumId = '{1}' and Location = '{2}'", v.Local.sTraySize, v.Local.iCnt, v.Local.sLocation,  v.Local.sFilter)
+		f.Data.DataView.Create("binRecordsDT", "singleDV", 22, v.Local.sFilter, "wtsNumId asc")
+			f.Data.DataTable.SetValue("uploadDT", v.Local.iCnt2, "Bin", v.DataView.binRecordsDT!singleDV(0).WellTraySlotID!FieldVal)
+			f.Intrinsic.Math.Add(v.Local.iCnt2, 1, v.Local.iCnt2)
+		f.Data.DataView.Close("binRecordsDT", "singleDV")
+	f.Intrinsic.Control.Next(v.Local.iCnt)	
+	f.Data.DataTable.Close("binRecordsDT")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.checkBinSpace.End
+
+Program.Sub.nextAvailable.Start
+v.Local.iQty.Declare
+v.Local.sTraySize.Declare
+v.Local.sSQL.Declare
+v.Local.sFilter.Declare
+v.Local.iCnt.Declare
+v.Local.iDVcnt.Declare
+v.Local.iStartingCnt.Declare
+v.Local.sWTSiD.Declare
+v.Local.iContinous.Declare
+
+v.Local.sTraySize.set(v.Screen.F_RadSourcesReceipt!ddlTraySize.Value)
+v.Local.iQty.Set(v.Screen.F_RadSourcesReceipt!txtUpl_Qty.Text!FieldVal)
+v.Local.iDVcnt.Set(v.Args.iStartingDVcnt)
+v.Local.iStartingCnt.Set(v.Local.iDVcnt)
+v.Local.iCnt.Set(1)
+
+f.Intrinsic.Control.Try
+
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select * from GCG_5274_BinMaint where Active = '1' and Location = '{0}' order by wtsNumId asc", v.Screen.F_RadSourcesReceipt!txtLoc.Text, v.Local.sSql)
+		f.Data.DataTable.CreateFromSQL("binMaintDT", "con", v.Local.sSQL)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.String.Build("TraySize = '{0}'", v.Local.sTraySize, v.Local.sFilter)
+	f.Data.DataView.Create("binMaintDT", "binTraySizeDV", 22, v.Local.sFilter, "wtsNumId asc")
+	
+	f.Intrinsic.Control.If(v.DataView.binMaintDT!binTraySizeDV.RowCount, >, 0)
+		v.Local.iContinous.Set(v.DataView.binMaintDT!binTraySizeDV(v.Local.iDVcnt).WTSnumID!FieldVal)
+		f.Intrinsic.Control.DoUntil(v.Local.iCnt, =,v.Local.iQty)
+			'check if the row has the Field USED as true.
+			f.Intrinsic.Control.If(v.DataView.binMaintDT!binTraySizeDV(v.Local.iDVcnt).Used!FieldVal, =, True)
+				v.Local.iCnt.Set(0)
+				v.Local.iStartingCnt.Set(v.Local.iDVcnt)
+				f.Intrinsic.Math.Add(v.Local.iStartingCnt, 1, v.Local.iStartingCnt)
+			f.Intrinsic.Control.EndIf
+			
+			'Check continous trays.
+			f.Intrinsic.Control.If(v.Local.iContinous, =, v.DataView.binMaintDT!binTraySizeDV(v.Local.iDVcnt).WTSnumID!FieldVal)
+				f.Intrinsic.Math.Add(v.Local.iContinous, 1, v.Local.iContinous)
+			f.Intrinsic.Control.Else
+				v.Local.iContinous.Set(v.DataView.binMaintDT!binTraySizeDV(v.Local.iDVcnt).WTSnumID!FieldVal)
+				f.Intrinsic.Math.Add(v.Local.iContinous, 1, v.Local.iContinous)
+				v.Local.iCnt.Set(0)	
+				v.Local.iStartingCnt.Set(v.Local.iDVcnt)
+				f.Intrinsic.Math.Add(v.Local.iStartingCnt, 1, v.Local.iStartingCnt)
+			f.Intrinsic.Control.EndIf
+	
+			f.Intrinsic.Math.Add(v.Local.iCnt, 1, v.Local.iCnt)
+			f.Intrinsic.Math.Add(v.Local.iDVcnt, 1, v.Local.iDVcnt)
+			'check bounds.
+			f.Intrinsic.Control.If(v.Local.iDVcnt, =, v.DataView.binMaintDT!binTraySizeDV.RowCount)
+				f.Intrinsic.UI.Msgbox("There is not enough space for the sourcers")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Loop
+	
+		v.Global.iWTSidStart.Set(v.DataView.binMaintDT!binTraySizeDV(v.Local.iStartingCnt).WTSnumID!FieldVal)
+		v.Global.iWTSidEnd.Set(v.DataView.binMaintDT!binTraySizeDV(v.Local.iDVcnt).WTSnumID!FieldVal)
+		
+		v.Local.sWTSiD.Set(v.DataView.binMaintDT!binTraySizeDV(v.Local.iStartingCnt).WellTraySlotID!FieldVal)
+		
+		gui.F_RadSourcesReceipt.txtBin.Text(v.Local.sWTSiD)	
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("There are not available bins.")
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataView.Close("binMaintDT", "binTraySizeDV")
+	f.Data.DataTable.Close("binMaintDT")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.nextAvailable.End
+
+Program.Sub.cmdNextAvailable_Click.Start
+'call the next available WTSID with a starting 0.
+f.Intrinsic.Control.CallSub(nextAvailable, iStartingDVcnt, 0)
+Program.Sub.cmdNextAvailable_Click.End
+
+Program.Sub.cmdInvStatus_Click.Start
+'v.Local.sParams.Declare
+'f.Intrinsic.String.Build("O!*!{0}!*!", v.Screen.F_RadSourcesReceipt!txtPO.text!FieldValTrim, v.Local.sParams)
+'f.Global.General.CallWrapperSync(175200, v.Local.sParams)
+Program.Sub.cmdInvStatus_Click.End
+
+Program.Sub.cmdViewPO_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sParams.Declare
+	f.Intrinsic.String.Build("O!*!{0}!*!", v.Screen.F_RadSourcesReceipt!txtPO.text!FieldValTrim, v.Local.sParams)
+	f.Global.General.CallWrapperSync(175200, v.Local.sParams)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdViewPO_Click.End
+
+Program.Sub.cmdCancel_Click.Start
+f.Intrinsic.Control.End
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.cmdPNBrowser_Click.Start
+v.Local.sRet.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	'opens a custom part number browser.
+	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.UI.Browser("PART NUMBER", "con", "Select Part, Location, Description from V_INVENTORY_MSTR", "Part*!*Location*!*Description", "100*!*100*!*100", v.Local.sRet)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.sRet, =, "***CANCEL***")
+		f.Intrinsic.Control.If(v.Screen.F_RadSourcesReceipt!txtPO, =, "")
+		f.Intrinsic.Control.AndIf(v.Screen.F_RadSourcesReceipt!txtPOLine, =, "")
+			v.Global.bPOLoad.Set(False)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else	
+		'if selected a valid part number, sets common fields with the information from the browser.
+		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+		v.Local.sRet.RedimPreserve(0,2)
+		
+		gui.F_RadSourcesReceipt.txtSAPartNumber.Text(v.Local.sRet(0))
+		gui.F_RadSourcesReceipt.txtPartNum.Text(v.Local.sRet(0))
+'*************************************************************************************************
+'Pull from PO Line.
+		gui.F_RadSourcesReceipt.txtLoc.Text(v.Local.sRet(1))
+		gui.F_RadSourcesReceipt.txtDesc.Text(v.Local.sRet(2))
+		v.Global.bPOLoad.Set(True)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPNBrowser_Click.End
+
+Program.Sub.cmdGLAccountBrowser_Click.Start
+v.Local.sRet.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.UI.Browser("GL ACCOUNT", "con", "Select GL_ACCOUNT, DESCR from GL_MASTER", "GL Account*!*Description", "100*!*100", v.Local.sRet)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.sRet, =, "***CANCEL***")
+		f.Intrinsic.Control.If(v.Screen.F_RadSourcesReceipt!txtPO, =, "")
+		f.Intrinsic.Control.AndIf(v.Screen.F_RadSourcesReceipt!txtPOLine, =, "")
+			v.Global.bPOLoad.Set(False)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else	
+		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+		v.Local.sRet.RedimPreserve(0,2)
+		
+		gui.F_RadSourcesReceipt.txtGlAccount.Text(v.Local.sRet(0))
+		v.Global.bPOLoad.Set(True)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdGLAccountBrowser_Click.End
+
+Program.Sub.standAloneReceipt.Start
+v.Local.sPart.Declare
+v.Local.sLoc.Declare
+v.Local.sDescription.Declare
+v.Local.sQuantity.Declare
+v.Local.sPOQTY.Declare
+v.Local.sHeat.Declare
+v.Local.sLastRecDate.Declare
+v.Local.sCertDate.Declare
+v.Local.sBin.Declare
+v.Local.iCnt.Declare
+v.Local.sGlAcc.Declare
+v.Local.sRev.Declare
+v.Local.sCost.Declare
+
+v.Local.sPart.Set(v.Screen.F_RadSourcesReceipt!txtPartNum.Text!FiedlValTrim)
+v.Local.sLoc.Set(v.Screen.F_RadSourcesReceipt!txtLoc.Text!FieldValTrim)
+v.Local.sDescription.Set(v.Screen.F_RadSourcesReceipt!txtDesc.Text!FieldValTrim)
+v.Local.sQuantity.Set(v.Screen.F_RadSourcesReceipt!txtQTY.Text!FieldValTrim)
+v.Local.sPOQTY.Set(v.Screen.F_RadSourcesReceipt!txtPO_Qty.Text!FieldValTrim)
+v.Local.sHeat.Set(v.Screen.F_RadSourcesReceipt!txtHeat.Text!FieldValTrim)
+v.Local.sGlAcc.Set( v.Screen.F_RadSourcesReceipt!txtGlAccount.Text!FieldValTrim)
+v.Local.sCost.Set(v.Screen.F_RadSourcesReceipt!txtUnitCost.Text!FieldValTrim)
+
+v.Local.sSerial.Declare
+v.Local.sNPS_Mantissa.Declare
+v.Local.sMeasureDate.Declare
+v.Local.sLeakTestDate.Declare
+v.Local.sActivity.Declare
+
+v.Local.sFilePath.Declare
+v.Local.sReceiptLine.Declare
+v.Local.sText.Declare
+v.Local.sSQL.Declare
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.InvokeWaitDialog("Stand Alone Receiving...", "Stand Alone Receipt")
+	f.Intrinsic.Control.If(v.Local.sPart.Length, >, 16)
+		f.Intrinsic.String.RPad(v.Local.sPart, " ", 20, v.Local.sPart)
+		f.Intrinsic.String.Right(v.Local.sPart, 3, v.Local.sRev)
+		f.Intrinsic.String.Left(v.Local.sPart, 17, v.Local.sPart)
+	f.Intrinsic.Control.Else
+		v.Local.sRev.Set("")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.UI.ChangeWaitStatus("Stand Alone Receiving...", 30)
+	'gets the dates in the correct format for callwrapper.
+	f.Intrinsic.Control.CallSub(F_RadSourcesReceiptatDate, sDate, v.Screen.F_RadSourcesReceipt!dtpLastRecDate.Text!FieldVal)
+	v.Local.sLastRecDate.Set(v.Global.sDateHolder)
+	f.Intrinsic.Control.CallSub(F_RadSourcesReceiptatDate, sDate, v.Screen.F_RadSourcesReceipt!dtpCertDate.Text!FieldVal)
+	v.Local.sCertDate.Set(v.Global.sDateHolder)
+	
+	f.Intrinsic.UI.ChangeWaitStatus("Stand Alone Receiving...", 45)
+	'writes each line of the stand alone receipt for the callwrapper.
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.uploadDT.RowCount--)
+		v.Local.sSerial.Set(v.DataTable.uploadDT(v.Local.iCnt).Serial!FieldVal)
+		v.Local.sBin.Set(v.DataTable.uploadDT(v.Local.iCnt).Bin!FieldVal)
+		
+		'PART, REV, LOC, QTY, REF, LOT, BIN, HEAT, SERIAL, ISS-REC(I for Issue, R for Rec), GL-ACCT, COST, ALLOW-ZERO-COST-FLAG, WIDTH, LENGTH, UM-WIDTH, UM-LENGTH
+		f.Intrinsic.String.Build("{0},{1},{2},1,,,{3},{4},{5},R,N,{6},Y,,,,", v.Local.sPart, v.Local.sRev, v.Local.sLoc, v.Local.sBin, v.Local.sHeat, v.Local.sSerial, v.Local.sCost, v.Local.sReceiptLine)
+		f.Intrinsic.String.Build("{0}{1}{2}", v.Local.sText, v.Local.sReceiptLine, v.Ambient.NewLine, v.Local.sText)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.UI.ChangeWaitStatus("Stand Alone Receiving...", 50)
+	'writes the text file for callwrapper.
+	f.Intrinsic.String.Build("{0}\ISSREC.txt", v.Caller.FilesDir, v.Local.sFilePath)
+	f.Intrinsic.File.String2File(v.Local.sFilePath, v.Local.sText)
+	
+	f.Intrinsic.UI.ChangeWaitStatus("Stand Alone Receiving...", 65)
+	'call the callwrapper.
+	f.Global.Callwrapper.New("IssueReceipt", "Inventory.StandAloneIssueReceipts")
+	f.Global.Callwrapper.SetProperty("IssueReceipt", "FileName", "ISSREC.txt")
+	f.Global.Callwrapper.Run("IssueReceipt")
+	f.Intrinsic.File.DeleteFile(v.Local.sFilePath)
+	
+	f.Intrinsic.UI.ChangeWaitStatus("Stand Alone Receiving...", 75)
+	'writes the changes into datatables.
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.uploadDT.RowCount--)
+			v.Local.sSerial.Set(v.DataTable.uploadDT(v.Local.iCnt).Serial!FieldVal)
+			v.Local.sNPS_Mantissa.Set(v.DataTable.uploadDT(v.Local.iCnt).NPSMantissa!FieldVal)
+			v.Local.sMeasureDate.Set(v.DataTable.uploadDT(v.Local.iCnt).MeasureDate!FieldVal)
+			v.Local.sLeakTestDate.Set(v.DataTable.uploadDT(v.Local.iCnt).LeakTestDate!FieldVal)
+			v.Local.sActivity.Set(v.DataTable.uploadDT(v.Local.iCnt).Activity!FieldVal)
+			v.Local.sBin.Set(v.DataTable.uploadDT(v.Local.iCnt).Bin!FieldVal)
+			v.Local.sSerial.Set(v.DataTable.uploadDT(v.Local.iCnt).Serial!FieldVal)
+		
+			f.Intrinsic.String.Build("Update Item_Master Set Date_Last_Rec = '{0}', User_Field_1  = '{1}', User_Field_2 = '{2}',  User_Field_3 = '{3}', User_Field_4 = '{4}', Cert_Date = '{5}'Where Part = '{6}' and Bin = '{7}' and Serial_Number = '{8}'", v.Local.sLastRecDate, v.Local.sNPS_Mantissa, v.Local.sMeasureDate, v.Local.sLeakTestDate, v.Local.sCertDate, v.Local.sPart, v.Local.sBin, v.Local.sSerial, v.Local.sSQL)
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+			'add heat
+			f.Intrinsic.String.Build("update GCG_5274_BINMAINT set used = '1', part = '{0}', serial ='{1}' where welltrayslotid = '{2}'", v.Local.sPart, v.Local.sSerial, v.Local.sBin, v.Local.sSQL)
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.Intrinsic.UI.ChangeWaitStatus("Stand Alone Receiving...", 99)
+	f.Intrinsic.UI.CloseWaitDialog
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.UI.Msgbox("Stand Alone Receipt Complete.")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.standAloneReceipt.End
+
+Program.Sub.PO_Receipt.Start
+v.Local.iCnt.Declare
+v.Local.sPO.Declare
+v.Local.sLine.Declare
+v.Local.sPart.Declare
+v.Local.sBin.Declare
+v.Local.sLot.Declare
+v.Local.sHeat.Declare
+v.Local.sSerial.Declare
+v.Local.sRcvdDate.Declare
+v.Local.sQty.Declare
+v.Local.sPrice.Declare
+v.Local.sUser1.Declare
+v.Local.sUser2.Declare
+v.Local.sUser3.Declare
+v.Local.sUser4.Declare
+V.Local.sSQL.Declare
+v.Local.sCertDate.Declare
+v.Local.sPO.Set(v.Screen.F_RadSourcesReceipt!txtPO.Text!FieldValTrim)
+v.Local.sLot.Set(v.Screen.F_RadSourcesReceipt!txtLot.Text!FieldValTrim)
+v.Local.sHeat.Set(v.Screen.F_RadSourcesReceipt!txtHeat.Text!FieldValTrim)
+v.Local.sPrice.Set(v.Screen.F_RadSourcesReceipt!txtUnitCost.Text!FieldValTrim)
+v.Local.sPart.Set(v.Screen.F_RadSourcesReceipt!txtPartNum.Text!FieldVal)
+v.Local.sQty.Set("1")
+f.Intrinsic.String.Right(v.Screen.F_RadSourcesReceipt!txtPOLine.Text!FieldValTrim, 3, v.Local.sLine)
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.InvokeWaitDialog("P.O. Receiving...", "P.O. Receipt")
+	'clean the table 6016 for callwrapper 6016
+	f.Intrinsic.Control.If(v.DataTable.6016.RowCount, >, 0)
+		f.Data.DataTable.DeleteRow("6016")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.UI.ChangeWaitStatus("P.O. Receiving...", 35)
+	'sets values from each row in uploadDT to local variables and then adds a row to 6016 DT.
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.uploadDT.RowCount--)	
+		v.Local.sBin.Set(v.DataTable.uploadDT(v.Local.iCnt).Bin!FieldValTrim)
+		v.Local.sSerial.Set(v.DataTable.uploadDT(v.Local.iCnt).Serial!FieldValTrim)
+		v.Local.sUser1.Set(v.DataTable.uploadDT(v.Local.iCnt).NPSMantissa!FieldValTrim)
+		v.Local.sUser2.Set(v.DataTable.uploadDT(v.Local.iCnt).MeasureDate!FieldValTrim)
+		v.Local.sUser3.Set(v.DataTable.uploadDT(v.Local.iCnt).LeakTestDate!FieldValTrim)
+		v.Local.sUser4.Set(v.DataTable.uploadDT(v.Local.iCnt).Activity!FieldValTrim)
+		
+		'f.Data.DataTable.AddRow("6016", "PO", v.Local.sPO, "Line", v.Local.sLine, "Bin", v.Local.sBin, "Lot", v.Local.sLot, "heat", v.Local.sHeat, "serial", v.Local.sSerial, "QTY", v.Local.sQty, "Price", v.Local.sPrice, "User1", v.Local.sUser1, "User2", v.Local.sUser2, "User3", v.Local.sUser3, "User4", v.Local.sUser4)
+		'f.Data.DataTable.AddRow("6016", "PO", v.Local.sPO, "Line", v.Local.sLine, "Bin", v.Local.sBin, "heat", v.Local.sHeat, "serial", v.Local.sSerial, "QTY", v.Local.sQty, "Price", v.Local.sPrice, "User1", v.Local.sUser1, "User2", v.Local.sUser2, "User3", v.Local.sUser3, "User4", v.Local.sUser4)
+		f.Data.DataTable.AddRow("6016", "PO", v.Local.sPO, "Line", v.Local.sLine, "Bin", v.Local.sBin, "heat", v.Local.sHeat, "serial", v.Local.sSerial, "QTY", v.Local.sQty, "User1", v.Local.sUser1, "User2", v.Local.sUser2, "User3", v.Local.sUser3, "User4", v.Local.sUser4, "Lot", v.Local.sLot)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.UI.ChangeWaitStatus("P.O. Receiving...", 60)
+	'calls callwrapper, it uses datatable 6016 previously built.
+	f.Intrinsic.Control.CallSub("6016Sync")
+	
+	f.Intrinsic.UI.ChangeWaitStatus("P.O. Receiving...", 85)
+	'updates fields in Item Master and Bin Maint that callwrapper 6016 does not use.
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.uploadDT.RowCount--)
+			v.Local.sBin.Set(v.DataTable.uploadDT(v.Local.iCnt).Bin!FieldValTrim)
+			v.Local.sSerial.Set(v.DataTable.uploadDT(v.Local.iCnt).Serial!FieldValTrim)
+			v.Local.sRcvdDate.Set(v.DataTable.uploadDT(v.Local.iCnt).LastRecDate!FieldValTrim)
+			v.Local.sCertDate.Set(v.DataTable.uploadDT(v.Local.iCnt).CertDate!FieldValTrim)
+			
+			f.Intrinsic.String.Build("Update Item_Master Set Date_Last_Rec = '{0}',  Cert_Date = '{1}'Where Part = '{2}' and Bin = '{3}' and Serial_Number = '{4}'", v.Local.sRcvdDate, v.Local.sCertDate, v.Local.sPart, v.Local.sBin, v.Local.sSerial, v.Local.sSQL)
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+			
+			f.Intrinsic.String.Build("update GCG_5274_BINMAINT set used = '1', part = '{0}', serial ='{1}' where welltrayslotid = '{2}'", v.Local.sPart, v.Local.sSerial, v.Local.sBin, v.Local.sSQL)
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)			
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.UI.ChangeWaitStatus("P.O. Receiving...", 99)
+	f.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.UI.Msgbox("P.O. Receipt Complete.")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry	
+Program.Sub.PO_Receipt.End
+
+Program.Sub.Serialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+
+f.Intrinsic.Control.If(v.DataTable.uploadDT.Exists, =, False)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.F_RadSourcesReceipt.GsGridControl1.Serialize("headerGV", v.Local.sSerialize)
+f.Global.Registry.AddValue(v.Caller.User, v.Caller.CompanyCode, "headerGV", 5274, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, v.Local.sSerialize)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "headerGV", 5274, 0, 5, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize, <>, "")
+		f.ODBC.Connection!common.OpenCommonConnection
+			f.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '5274'")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "headerGV", "5274", 1000, 6, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize.Trim, <>, "")
+		gui.F_RadSourcesReceipt.GsGridControl1.Deserialize(v.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
