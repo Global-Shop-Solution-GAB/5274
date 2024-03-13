@@ -1,0 +1,16 @@
+/* ==========================================
+ * TABLE: GCG_5274_BinMaint
+ * ========================================== */
+CREATE TABLE "GCG_5274_BINMAINT"(
+ "WELLTRAYSLOTID" CHAR(4) NOT NULL ,
+ "TRAYSIZE" NUMERIC(8,2) NOT NULL ,
+ "WELL" CHAR(1) NOT NULL ,
+ "TRAY" CHAR(1) NOT NULL ,
+ "SLOT" CHAR(2) NOT NULL ,
+ "PART" CHAR(20),
+ "SERIAL" CHAR(50),
+ "HEAT" CHAR(50),
+ "USED" BIT NOT NULL ,
+ "ACTIVE" BIT NOT NULL ,
+ "WELLTRAY" CHAR(2) NOT NULL ,
+ "WTSNUMID" NUMERIC(8,2));
