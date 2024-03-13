@@ -1,0 +1,195 @@
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+v.Local.sWell.Declare
+v.Local.sWell.Redim(0,19)
+v.Local.sTray.Declare
+v.Local.sTray.Redim(0,20)
+v.Local.sSlot.Declare
+v.Local.sSlot.Redim(0,19)
+v.Local.iCnt.Declare
+v.Local.iCnt2.Declare
+v.Local.iCnt3.Declare
+v.Local.iCntLoc.Declare
+v.Local.sSQL.Declare
+v.Local.iRet.Declare
+
+v.Local.sWell(0).Set("A")
+v.Local.sWell(1).Set("B")
+v.Local.sWell(2).Set("C")
+v.Local.sWell(3).Set("D")
+v.Local.sWell(4).Set("E")
+v.Local.sWell(5).Set("F")
+v.Local.sWell(6).Set("G")
+v.Local.sWell(7).Set("H")
+v.Local.sWell(8).Set("I")
+v.Local.sWell(9).Set("J")
+v.Local.sWell(10).Set("K")
+v.Local.sWell(11).Set("L")
+v.Local.sWell(12).Set("M")
+v.Local.sWell(13).Set("N")
+v.Local.sWell(14).Set("O")
+v.Local.sWell(15).Set("P")
+v.Local.sWell(16).Set("Q")
+v.Local.sWell(17).Set("R")
+v.Local.sWell(18).Set("S")
+v.Local.sWell(19).Set("T")
+
+v.Local.sTray(0).Set("A")
+v.Local.sTray(1).Set("B")
+v.Local.sTray(2).Set("C")
+v.Local.sTray(3).Set("D")
+v.Local.sTray(4).Set("E")
+v.Local.sTray(5).Set("F")
+v.Local.sTray(6).Set("G")
+v.Local.sTray(7).Set("H")
+v.Local.sTray(8).Set("I")
+v.Local.sTray(9).Set("J")
+v.Local.sTray(10).Set("K")
+v.Local.sTray(11).Set("L")
+v.Local.sTray(12).Set("M")
+v.Local.sTray(13).Set("N")
+v.Local.sTray(14).Set("O")
+v.Local.sTray(15).Set("P")
+v.Local.sTray(16).Set("Q")
+v.Local.sTray(17).Set("R")
+v.Local.sTray(18).Set("S")
+v.Local.sTray(19).Set("T")
+v.Local.sTray(20).Set("U")
+
+v.Local.sSlot(0).Set("01")
+v.Local.sSlot(1).Set("02")
+v.Local.sSlot(2).Set("03")
+v.Local.sSlot(3).Set("04")
+v.Local.sSlot(4).Set("05")
+v.Local.sSlot(5).Set("06")
+v.Local.sSlot(6).Set("07")
+v.Local.sSlot(7).Set("08")
+v.Local.sSlot(8).Set("09")
+v.Local.sSlot(9).Set("10")
+v.Local.sSlot(10).Set("11")
+v.Local.sSlot(11).Set("12")
+v.Local.sSlot(12).Set("13")
+v.Local.sSlot(13).Set("14")
+v.Local.sSlot(14).Set("15")
+v.Local.sSlot(15).Set("16")
+v.Local.sSlot(16).Set("17")
+v.Local.sSlot(17).Set("18")
+v.Local.sSlot(18).Set("19")
+v.Local.sSlot(19).Set("20")
+
+v.Local.iWTSnumID.Declare(Long, 0)
+
+v.Local.sWellTraySlot.Declare
+v.Local.sWellTray.Declare
+v.Local.sDescription.Declare
+
+f.Intrinsic.Control.Try
+
+	f.Data.DataTable.Create("BinMaintDT")
+	f.Data.DataTable.AddColumn("BinMaintDT", "WellTraySlotID", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "TraySize", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Well", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Tray", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Slot", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Part", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Location", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Serial", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Used", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "Active", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "WellTray", "String")
+	f.Data.DataTable.AddColumn("BinMaintDT", "WTSnumID", "String")
+	
+	f.Data.DataTable.Create("BinMasterDT")
+	f.Data.DataTable.AddColumn("BinMasterDT", "bin", "String")
+	f.Data.DataTable.AddColumn("BinMasterDT", "location", "String")
+	f.Data.DataTable.AddColumn("BinMasterDT", "bin_description", "String")
+	
+	f.Intrinsic.UI.Msgbox("Do you need to create Custom Bins", , 3,v.Local.iRet)
+	f.Intrinsic.Control.If(v.Local.iRet, =, 6)
+	
+		f.ODBC.Connection!con.OpenCompanyConnection
+			f.Data.DataTable.CreateFromSQL("LocationDT", "con", "Select * from V_LOCATIONS")
+			f.Data.DataTable.AddRow("LocationDT", "Location", "  ")
+			Function.Intrinsic.Debug.InvokeDebugger
+			Function.Intrinsic.Debug.Stop
+			
+		f.ODBC.Connection!con.Close
+		
+		f.Intrinsic.UI.InvokeWaitDialog("Creating Bins")
+		f.Intrinsic.UI.ChangeWaitStatus("Creating Bins", "50")
+		f.Intrinsic.Control.If(v.DataTable.LocationDT.RowCount, >, 0)
+		
+			f.Intrinsic.Control.For(v.Local.iCntLoc, 0, v.DataTable.LocationDT.RowCount--, 1)
+			v.Local.iWTSnumID.Set(0)
+				f.Intrinsic.Control.For(v.Local.iCnt, 0, 19, 1)
+					f.Intrinsic.Control.For(v.Local.iCnt2, 0, 20, 1)
+						f.Intrinsic.Control.For(v.Local.iCnt3, 0, 19, 1)
+							f.Intrinsic.String.Build("{0}{1}{2}", v.Local.sWell(v.Local.iCnt), v.Local.sTray(v.Local.iCnt2), v.Local.sSlot(v.Local.iCnt3), v.Local.sWellTraySlot)
+							f.Intrinsic.String.Build("{0}{1}", v.Local.sWell(v.Local.iCnt), v.Local.sTray(v.Local.iCnt2), v.Local.sWellTray)
+							f.Intrinsic.String.Build("Well_{0}-Tray_{1}-Slot_{2}", v.Local.sWell(v.Local.iCnt), v.Local.sTray(v.Local.iCnt2), v.Local.sSlot(v.Local.iCnt3), v.Local.sDescription)
+							'f.ODBC.Connection!con.OpenCompanyConnection
+								'f.Intrinsic.String.Build("Insert into GCG_5274_BinMaint (WellTraySlotID, TraySize, Well, Tray, Slot, Part, Location, Serial, Used, Active, WellTray, WTSnumID) values ('{0}{1}{2}', '20', '{0}', '{1}', '{2}','','{4}','', '0', '1', '{0}{1}', '{3}')", v.Local.sWell(v.Local.iCnt), v.Local.sTray(v.Local.iCnt2), v.Local.sSlot(v.Local.iCnt3), v.Local.iWTSnumID, v.DataTable.LocationDT(v.Local.iCntLoc).Location!FieldValTrim, v.Local.sSQL)
+								'f.ODBC.Connection!con.Execute(v.Local.sSQL)
+								f.Data.DataTable.AddRow("BinMaintDT", "WellTraySlotID", v.Local.sWellTraySlot, "TraySize", "20" , "Well", v.Local.sWell(v.Local.iCnt), "Tray", v.Local.sTray(v.Local.iCnt2), "Slot", v.Local.sSlot(v.Local.iCnt3), Part, "", Location, v.DataTable.LocationDT(v.Local.iCntLoc).Location!FieldVal, "Serial", "", "Used", "0", "Active", "1", "WellTray", v.Local.sWellTray, "WTSnumID", v.Local.iWTSnumID)
+								'f.Intrinsic.String.Build("insert into Bin_Master (bin, location, bin_description) values ('{0}{1}{2}', '{3}', 'Well_{0}-Tray_{1}-Slot_{2}')",v.Local.sWell(v.Local.iCnt), v.Local.sTray(v.Local.iCnt2), v.Local.sSlot(v.Local.iCnt3), v.DataTable.LocationDT(v.Local.iCntLoc).Location!FieldValTrim, v.Local.sSQL)
+								'f.ODBC.Connection!con.Execute(v.Local.sSQL)
+								f.Data.DataTable.AddRow("BinMasterDT", "bin", v.Local.sWellTraySlot, "Location", v.DataTable.LocationDT(v.Local.iCntLoc).Location!FieldVal, "bin_description", v.Local.sDescription)
+								f.Intrinsic.Math.Add(v.Local.iWTSnumID, 1, v.Local.iWTSnumID)
+								
+							'f.ODBC.Connection!con.Close
+						f.Intrinsic.Control.Next(v.Local.iCnt3)
+					f.Intrinsic.Control.Next(v.Local.iCnt2)
+				f.Intrinsic.Control.Next(v.Local.iCnt)		
+			f.Intrinsic.Control.Next(v.Local.iCntLoc)
+'			
+'		f.Intrinsic.Control.Else
+'		
+'			f.Intrinsic.Control.For(v.Local.iCnt, 0, 19, 1)
+'				f.Intrinsic.Control.For(v.Local.iCnt2, 0, 20, 1)
+'					f.Intrinsic.Control.For(v.Local.iCnt3, 0, 19, 1)
+'						f.ODBC.Connection!con.OpenCompanyConnection
+'							f.Intrinsic.String.Build("Insert into GCG_5274_BinMaint (WellTraySlotID, TraySize, Well, Tray, Slot, Part, Location, Serial, Used, Active, WellTray, WTSnumID) values ('{0}{1}{2}', '20', '{0}', '{1}', '{2}','','','', '0', '1', '{0}{1}', '{3}')", v.Local.sWell(v.Local.iCnt), v.Local.sTray(v.Local.iCnt2), v.Local.sSlot(v.Local.iCnt3), v.Local.iWTSnumID, v.Local.sSQL)
+'							f.ODBC.Connection!con.Execute(v.Local.sSQL)
+'							f.Intrinsic.String.Build("insert into Bin_Master (bin, location, bin_description) values ('{0}{1}{2}', '', 'Well_{0}-Tray_{1}-Slot_{2}')",v.Local.sWell(v.Local.iCnt), v.Local.sTray(v.Local.iCnt2), v.Local.sSlot(v.Local.iCnt3), v.Local.sSQL)
+'							f.ODBC.Connection!con.Execute(v.Local.sSQL)
+'							f.Intrinsic.Math.Add(v.Local.iWTSnumID, 1, v.Local.iWTSnumID)
+'						f.ODBC.Connection!con.Close
+'					f.Intrinsic.Control.Next(v.Local.iCnt3)
+'				f.Intrinsic.Control.Next(v.Local.iCnt2)
+'			f.Intrinsic.Control.Next(v.Local.iCnt)
+
+		f.Intrinsic.Control.EndIf
+'		Function.Intrinsic.Debug.InvokeDebugger
+'		Function.Intrinsic.Debug.Stop
+'		
+		f.ODBC.Connection!con.OpenCompanyConnection
+			f.Data.DataTable.SaveToDB("BinMaintDT", "con", "GCG_5274_BINMAINT", "WellTraySlotID*!*TraySize*!*Well*!*Tray*!*Slot*!*Part*!*Location*!*Serial*!*Used*!*Active*!*WellTray*!*WTSnumID")
+			'f.Data.DataTable.SaveToDB("BinMasterDT", "con", "BIN_MASTER", "bin*!*location")
+		f.ODBC.Connection!con.Close
+		f.Intrinsic.UI.CloseWaitDialog
+		f.Intrinsic.UI.Msgbox("Done")
+	f.Intrinsic.Control.EndIf
+'	Function.Intrinsic.Debug.InvokeDebugger
+'	Function.Intrinsic.Debug.Stop
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project ProjectName.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
